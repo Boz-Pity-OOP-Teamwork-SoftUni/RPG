@@ -12,5 +12,3 @@ namespace RolePlayingGame
         public string Id { get; private set; }
     }
 }
-
-//type int or string?
