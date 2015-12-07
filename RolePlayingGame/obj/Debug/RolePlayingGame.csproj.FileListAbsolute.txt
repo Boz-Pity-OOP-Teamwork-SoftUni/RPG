@@ -1,0 +1,2 @@
+E:\C# homework\ObjectOrientedProgramming\TeamworkProject\RolePlayingGame\bin\Debug\RolePlayingGame.exe.config
+E:\C# homework\ObjectOrientedProgramming\TeamworkProject\RolePlayingGame\obj\Debug\RolePlayingGame.csprojResolveAssemblyReference.cache
