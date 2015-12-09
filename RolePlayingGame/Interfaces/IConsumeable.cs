@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RolePlayingGame
+namespace RolePlayingGame.Interfaces
 {
-    class Program
+    public interface IConsumeable
     {
-        static void Main(string[] args)
-        {
-        }
+        void Consume(Characters.Character target);
     }
 }

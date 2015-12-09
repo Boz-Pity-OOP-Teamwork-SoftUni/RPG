@@ -1,2 +1,8 @@
-D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.exe.config
-D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.csprojResolveAssemblyReference.cache
+E:\C# homework\ObjectOrientedProgramming\TeamworkProject\RolePlayingGame\bin\Debug\RolePlayingGame.exe.config
+E:\C# homework\ObjectOrientedProgramming\TeamworkProject\RolePlayingGame\obj\Debug\RolePlayingGame.csprojResolveAssemblyReference.cache
+C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.exe.config
+C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.csprojResolveAssemblyReference.cache
+C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.exe
+C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.pdb
+C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.exe
+C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.pdb
