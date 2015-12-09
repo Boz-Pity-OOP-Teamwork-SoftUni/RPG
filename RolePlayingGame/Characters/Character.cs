@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RolePlayingGame.Characters
+﻿namespace RolePlayingGame.Characters
 {
-    public abstract class Character : GameObject
+    using System.Collections.Generic;
+
+    internal class Character : GameObject
     {
         protected Character(string id, int x, int y, int healthPoints, int defensePoints, int attackPoints)
             : base(id)

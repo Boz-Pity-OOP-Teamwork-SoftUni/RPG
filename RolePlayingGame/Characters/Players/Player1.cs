@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RolePlayingGame.Characters.Players
+﻿namespace RolePlayingGame.Characters.Players
 {
-    public class Player1 : Player
+    internal class Player1 : Player
     {
         private const string player1Id = "1";
         private const int player1X = 0;

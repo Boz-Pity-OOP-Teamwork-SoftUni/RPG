@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RolePlayingGame
+﻿namespace RolePlayingGame
 {
     public abstract class GameObject
     {
