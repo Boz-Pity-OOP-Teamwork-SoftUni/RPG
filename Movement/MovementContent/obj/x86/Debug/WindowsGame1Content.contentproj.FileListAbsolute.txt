@@ -1,0 +1,2 @@
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\LearningWPF\WindowsGame1\WindowsGame1Content\obj\x86\Debug\WindowsGame1Content.contentprojResolveAssemblyReference.cache
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\WindowsGame1\WindowsGame1Content\obj\x86\Debug\WindowsGame1Content.contentprojResolveAssemblyReference.cache

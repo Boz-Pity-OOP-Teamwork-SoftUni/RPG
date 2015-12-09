@@ -1,0 +1,2 @@
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.exe.config
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.csprojResolveAssemblyReference.cache

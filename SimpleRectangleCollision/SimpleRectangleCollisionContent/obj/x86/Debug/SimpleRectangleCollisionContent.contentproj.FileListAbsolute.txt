@@ -1,0 +1,2 @@
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\SimpleRectangleCollision\SimpleRectangleCollisionContent\obj\x86\Debug\SimpleRectangleCollisionContent.contentprojResolveAssemblyReference.cache
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\SimpleRectangleCollision\SimpleRectangleCollisionContent\obj\x86\Debug\SimpleRectangleCollisionContent.contentprojResolveAssemblyReference.cache

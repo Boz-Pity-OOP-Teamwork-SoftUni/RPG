@@ -1,0 +1,12 @@
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\bin\x86\Debug\WindowsGame1.exe
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\bin\x86\Debug\WindowsGame1.pdb
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\obj\x86\Debug\WindowsGame1.exe
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\obj\x86\Debug\WindowsGame1.pdb
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\obj\x86\Debug\Movement.csprojResolveAssemblyReference.cache
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\bin\x86\Debug\Content\dwarf.xnb
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\bin\x86\Debug\Content\walkAnim.xnb
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\bin\x86\Debug\Content\downWalk.xnb
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\bin\x86\Debug\Content\leftWalk.xnb
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\bin\x86\Debug\Content\rightWalk.xnb
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\Movement\Movement\bin\x86\Debug\Content\upWalk.xnb
