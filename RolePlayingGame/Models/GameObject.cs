@@ -1,10 +1,11 @@
-﻿using System;
-
-namespace RolePlayingGame
+﻿namespace RolePlayingGame.Models
 {
+    using System;
+
     public abstract class GameObject
     {
         private string id;
+
         protected GameObject(string id)
         {
             this.Id = id;
@@ -19,13 +20,14 @@ namespace RolePlayingGame
                 {
                     throw new ArgumentNullException("Id cannot be null");
                 }
+
                 this.id = value;
             }
         }
 
         public override string ToString()
         {
-            return string.Format("Id={0}", this.Id);
+            return string.Format("Id = {0}", this.Id);
         }
     }
 }

@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RolePlayingGame
+﻿namespace RolePlayingGame.Models
 {
+    using Items;
+    using System;
+    using System.Collections.Generic;
+
     public class Inventory
     {
         private const int Default_Capacity=12;
         private IList<Item> inventoryItems;
         private int capacity;
 
-        public Inventory(int capacity=Default_Capacity)
+        public Inventory(int capacity = Default_Capacity)
         {
             this.inventoryItems = new List<Item>();
             this.capacity = capacity;
@@ -28,7 +29,8 @@ namespace RolePlayingGame
                 if (value < 5)
                 {
                     throw new ArgumentOutOfRangeException("Inventory capacity cannot be less than 5");
-                };
+                }
+
                 this.capacity = value;
             }
         }
@@ -39,6 +41,7 @@ namespace RolePlayingGame
             {
                 throw new ArgumentNullException("Cannot add null item");
             }
+
             this.inventoryItems.Add(item);
         }
 
@@ -48,6 +51,7 @@ namespace RolePlayingGame
             {
                 throw new ArgumentNullException("Cannot add null item");
             }
+
             this.inventoryItems.Remove(item);
         }
 

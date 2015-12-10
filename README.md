@@ -1,7 +1,7 @@
 # Boz-Pity OOP Teamwork SoftUni
 
 ### 1. Teamwork project choice
-		* RPGmkjn
+		RPGmkjn
 ### 2. Users
 
 | Username  | User Name |
@@ -10,4 +10,3 @@
 | inna.dinkova  | Inna Dinkova  |
 | Orhan | Orhan Abdula |
 | theshaftman | Mariyan Apostolov |
--

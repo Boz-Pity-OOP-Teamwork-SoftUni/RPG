@@ -6,3 +6,9 @@ C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.ex
 C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.pdb
 C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.exe
 C:\Users\Orhan\Documents\GitHub\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.pdb
+D:\GitHub2\Team Boz-Pity\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.exe.config
+D:\GitHub2\Team Boz-Pity\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.exe
+D:\GitHub2\Team Boz-Pity\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.pdb
+D:\GitHub2\Team Boz-Pity\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.exe
+D:\GitHub2\Team Boz-Pity\RPG\RolePlayingGame\bin\Debug\RolePlayingGame.pdb
+D:\GitHub2\Team Boz-Pity\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.csprojResolveAssemblyReference.cache

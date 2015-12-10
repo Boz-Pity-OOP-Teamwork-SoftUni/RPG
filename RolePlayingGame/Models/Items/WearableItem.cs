@@ -1,9 +1,10 @@
-﻿using System;
-using RolePlayingGame.Enums;
-using RolePlayingGame.Interfaces;
-namespace RolePlayingGame.Items
+﻿namespace RolePlayingGame.Models.Items
 {
-    public class WearableItem:Item,IWearableItem
+    using System;
+    using RolePlayingGame.Enums;
+    using RolePlayingGame.Interfaces;
+
+    public class WearableItem : Item, IWearableItem
     {
         public WearableItemType itemType;
         private int attackPoints;
@@ -21,18 +22,16 @@ namespace RolePlayingGame.Items
             this.dodgeChance = dodgeChance;
         }
 
-
         public WearableItemType ItemType
         {
             get { return this.ItemType; }
-          
         }
 
         public int AttackPoints
         {
             get
             {
-              return  this.attackPoints;
+                return this.attackPoints;
             }
             set
             {
@@ -40,7 +39,8 @@ namespace RolePlayingGame.Items
                 {
                     throw new ArgumentOutOfRangeException("Attack points cannot be negative");
                 }
-                this.attackPoints=value;
+
+                this.attackPoints = value;
             }
         }
 
@@ -53,6 +53,7 @@ namespace RolePlayingGame.Items
                 {
                     throw new ArgumentOutOfRangeException("Defence points cannot be negative");
                 }
+
                 this.defencePoints = value;
             }
         }
@@ -69,6 +70,7 @@ namespace RolePlayingGame.Items
                 {
                     throw new ArgumentOutOfRangeException("Crit chance cannot be negative");
                 }
+
                 this.critChance = value;
             }
         }
@@ -85,6 +87,7 @@ namespace RolePlayingGame.Items
                 {
                     throw new ArgumentOutOfRangeException("Crit damage cannot be negative");
                 }
+
                 this.critDmg = value;
             }
         }
@@ -101,18 +104,19 @@ namespace RolePlayingGame.Items
                 {
                     throw new ArgumentOutOfRangeException("Dodge chance cannot be negative");
                 }
+
                 this.dodgeChance = value;
             }
         }
 
         public override string ToString()
         {
-            return base.ToString()
-                   +
-                   string.Format(
-                       "Type:{0}, Attack:{1}, Defence:{2}, Crit Chance:{3}, Crit Damage:{4}, Dodge Chance: {5} ",
-                       this.ItemType, this.AttackPoints, this.DefencePoints, this.CritChance, this.CritDmg,
-                       this.DodgeChance);
+            string result = base.ToString() + string.Format(
+                "Type:{0}, Attack:{1}, Defence:{2}, Crit Chance:{3}, Crit Damage:{4}, Dodge Chance: {5} ",
+                this.ItemType, this.AttackPoints, this.DefencePoints, this.CritChance, this.CritDmg,
+                this.DodgeChance);
+
+            return result;
         }
     }
 }

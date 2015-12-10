@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-
-namespace SimpleRectangleCollision
+﻿namespace SimpleRectangleCollision
 {
-    class Animation
-    {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Audio;
+    using Microsoft.Xna.Framework.Content;
+    using Microsoft.Xna.Framework.GamerServices;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using Microsoft.Xna.Framework.Media;
 
+    public class Animation
+    {
         private Texture2D animation;
         private Rectangle sourceRectangle;
         private Vector2 position;
@@ -52,15 +51,18 @@ namespace SimpleRectangleCollision
         {
             get { return this.frameHight; }
         }
+
         public float FrameTime
         {
             get { return this.frameTime; }
             set { this.frameTime = value; }
         }
+
         public void PlayAnimation(GameTime gameTime)
         {
             this.elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            this.sourceRectangle = new Rectangle(this.currentFrame * this.frameWidth, 0, this.frameWidth, this.frameHight);
+            this.sourceRectangle = new Rectangle(this.currentFrame * this.frameWidth, 0, 
+                this.frameWidth, this.frameHight);
 
             if (this.elapsed >= this.frameTime)
             {
@@ -75,14 +77,15 @@ namespace SimpleRectangleCollision
                 {
                     this.currentFrame++;
                 }
+
                 this.elapsed = 0;
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.animation, this.position, this.sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
+            spriteBatch.Draw(this.animation, this.position, this.sourceRectangle, 
+                Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
         }
-
     }
 }

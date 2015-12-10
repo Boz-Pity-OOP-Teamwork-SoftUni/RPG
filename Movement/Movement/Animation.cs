@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-
-namespace SimpleRectangleCollision
+﻿namespace SimpleRectangleCollision
 {
-    class Animation
-    {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Audio;
+    using Microsoft.Xna.Framework.Content;
+    using Microsoft.Xna.Framework.GamerServices;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using Microsoft.Xna.Framework.Media;
 
+    public class Animation
+    {
         private readonly Texture2D animation;
         private Rectangle sourceRectangle;
         private Vector2 position;
@@ -37,7 +36,6 @@ namespace SimpleRectangleCollision
             this.position = new Vector2(100, 100);  //TODO: make starting position changeable
         }
 
-        
         public Vector2 Position
         {
             get { return this.position; }
@@ -88,6 +86,5 @@ namespace SimpleRectangleCollision
         {
             spriteBatch.Draw(this.animation, this.position, this.sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
         }
-
     }
 }

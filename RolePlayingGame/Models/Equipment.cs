@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using RolePlayingGame.Enums;
-using RolePlayingGame.Interfaces;
-using RolePlayingGame.Items;
-namespace RolePlayingGame
+﻿namespace RolePlayingGame.Models
 {
-    public class Uquipment
-    {
-        private Dictionary<WearableItemType,IWearableItem> equipedItems;
+    using System;
+    using System.Collections.Generic;
+    using RolePlayingGame.Enums;
+    using RolePlayingGame.Interfaces;
 
-        public Uquipment()
+    public class Equipment
+    {
+        private Dictionary<WearableItemType, IWearableItem> equipedItems;
+
+        public Equipment()
         {
             this.equipedItems = new Dictionary<WearableItemType, IWearableItem>();
         }

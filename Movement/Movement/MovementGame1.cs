@@ -1,17 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using SimpleRectangleCollision;
-
 namespace WindowsGame1
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Audio;
+    using Microsoft.Xna.Framework.Content;
+    using Microsoft.Xna.Framework.GamerServices;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using Microsoft.Xna.Framework.Media;
+    using SimpleRectangleCollision;
+
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -19,10 +19,10 @@ namespace WindowsGame1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private Texture2D leftWalk, rightWalk, upWalk, downWalk,currentAnim;
+        private Texture2D leftWalk, rightWalk, upWalk, downWalk, currentAnim;
         private Rectangle destRectangle; // where the texture will be printed
         private Rectangle sourceRectangle; // which part of the sprite will be printed
-        private double elapsed; 
+        private double elapsed;
         private double delay = 200f;
         private int frames;
         private KeyboardState ks;
@@ -31,14 +31,13 @@ namespace WindowsGame1
         private Animation animation;
         private Animation curAnimation;
 
-
         public MovementGame1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = false;
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 800;
-            
+
             Content.RootDirectory = "Content";
         }
 
@@ -83,10 +82,10 @@ namespace WindowsGame1
             // TODO: Unload any non ContentManager content here
         }
 
-
         private void Animate(GameTime gameTime)
         {
             this.elapsed += gameTime.ElapsedGameTime.TotalMilliseconds;
+
             if (elapsed >= delay)
             {
                 if (this.frames == 3)
@@ -97,8 +96,10 @@ namespace WindowsGame1
                 {
                     this.frames++;
                 }
+
                 this.elapsed = 0;
             }
+
             this.sourceRectangle = new Rectangle(56 * frames, 0, 56, 56);
         }
 
@@ -115,29 +116,33 @@ namespace WindowsGame1
             {
                 this.position.X += 2f;
                 this.currentAnim = this.rightWalk;
+
                 Animate(gameTime);
             }
             else if (ks.IsKeyDown(Keys.Left) || ks.IsKeyDown(Keys.A))
             {
                 this.position.X -= 2f;
                 this.currentAnim = this.leftWalk;
+
                 Animate(gameTime);
             }
             else if (ks.IsKeyDown(Keys.Up) || ks.IsKeyDown(Keys.W))
             {
                 this.position.Y -= 2f;
                 this.currentAnim = this.upWalk;
+
                 Animate(gameTime);
             }
             else if (ks.IsKeyDown(Keys.Down) || ks.IsKeyDown(Keys.S))
             {
                 this.position.Y += 2f;
                 this.currentAnim = this.downWalk;
+
                 Animate(gameTime);
             }
             else
             {
-                this.sourceRectangle=new Rectangle(0,0,56,56);
+                this.sourceRectangle = new Rectangle(0, 0, 56, 56);
             }
 
             this.destRectangle = new Rectangle((int)this.position.X, (int)this.position.Y, 56, 56);

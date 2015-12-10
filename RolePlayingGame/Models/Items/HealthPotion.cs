@@ -1,9 +1,9 @@
-﻿using System;
-using RolePlayingGame.Characters;
-
-namespace RolePlayingGame.Items
+﻿namespace RolePlayingGame.Models.Items
 {
-    public class HealthPotion:Consumeable
+    using Characters;
+    using System;
+
+    public class HealthPotion : Consumeable
     {
         private int healthUpdate;
 
@@ -21,6 +21,7 @@ namespace RolePlayingGame.Items
                 {
                     throw new ArgumentOutOfRangeException("Health potion cannot heal for a negative amount");
                 }
+
                 this.healthUpdate = value;
             }
         }
@@ -31,7 +32,10 @@ namespace RolePlayingGame.Items
 
         public override string ToString()
         {
-            return base.ToString() + string.Format(" . Health potion: health effect:{0}", this.HealthUpdate);
+            string result = base.ToString() + string.Format(" . Health potion: health effect:{0}",
+                this.HealthUpdate);
+
+            return result;
         }
     }
 }
