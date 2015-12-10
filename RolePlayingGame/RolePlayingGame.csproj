@@ -43,11 +43,12 @@
   <ItemGroup>
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Monsters\Monster.cs" />
-    <Compile Include="Characters\Players\Player.cs" />
+    <Compile Include="Characters\Players\Hero.cs" />
     <Compile Include="Enums\WearableItemType.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
     <Compile Include="Interfaces\IConsumeable.cs" />
+    <Compile Include="Interfaces\IDefendable.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IWearableItem.cs" />
     <Compile Include="Inventory.cs" />

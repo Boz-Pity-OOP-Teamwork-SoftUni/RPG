@@ -9,9 +9,9 @@ namespace RolePlayingGame
         private IList<Item> inventoryItems;
         private int capacity;
 
-        public Inventory(IList<Item> inventoryItems, int capacity=Default_Capacity)
+        public Inventory(int capacity=Default_Capacity)
         {
-            this.inventoryItems = inventoryItems;
+            this.inventoryItems = new List<Item>();
             this.capacity = capacity;
         }
 
@@ -40,6 +40,15 @@ namespace RolePlayingGame
                 throw new ArgumentNullException("Cannot add null item");
             }
             this.inventoryItems.Add(item);
+        }
+
+        public void RemoveItem(Item item)
+        {
+            if (item == null)
+            {
+                throw new ArgumentNullException("Cannot add null item");
+            }
+            this.inventoryItems.Remove(item);
         }
 
         public override string ToString()

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RolePlayingGame.Characters;
+
 namespace RolePlayingGame.Interfaces
 {
-    public interface IAttack
+    public interface IDefendable
     {
-        double AttackPoints { get; set; }
-        void Attack(Character target);
+        void Defend(double damage);
     }
 }

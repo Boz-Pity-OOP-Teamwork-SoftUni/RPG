@@ -9,9 +9,9 @@ namespace RolePlayingGame
     {
         private Dictionary<WearableItemType,IWearableItem> equipedItems;
 
-        public Uquipment(Dictionary<WearableItemType, IWearableItem> equipedItems)
+        public Uquipment()
         {
-            this.equipedItems = equipedItems;
+            this.equipedItems = new Dictionary<WearableItemType, IWearableItem>();
         }
 
         public Dictionary<WearableItemType, IWearableItem> EquipedItems

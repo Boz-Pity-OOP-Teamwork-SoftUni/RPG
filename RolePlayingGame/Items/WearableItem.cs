@@ -6,13 +6,13 @@ namespace RolePlayingGame.Items
     public class WearableItem:Item,IWearableItem
     {
         public WearableItemType itemType;
-        private double attackPoints;
-        private double defencePoints;
+        private int attackPoints;
+        private int defencePoints;
         private double critChance;
         private double critDmg;
         private double dodgeChance;
 
-        public WearableItem(string id, string name, double attackPoints, double defencePoints, double critChance, double critDmg, double dodgeChance) : base(id, name)
+        public WearableItem(string id, string name, int attackPoints, int defencePoints, double critChance, double critDmg, double dodgeChance) : base(id, name)
         {
             this.attackPoints = attackPoints;
             this.defencePoints = defencePoints;
@@ -28,7 +28,7 @@ namespace RolePlayingGame.Items
           
         }
 
-        public double AttackPoints
+        public int AttackPoints
         {
             get
             {
@@ -44,7 +44,7 @@ namespace RolePlayingGame.Items
             }
         }
 
-        public double DefencePoints
+        public int DefencePoints
         {
             get { return this.defencePoints; }
             set
