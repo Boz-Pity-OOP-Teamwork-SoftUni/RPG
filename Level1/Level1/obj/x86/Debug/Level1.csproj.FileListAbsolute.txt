@@ -1,0 +1,10 @@
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster1.xnb
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster2.xnb
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster3.xnb
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Background\level1.xnb
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Level1.exe
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Level1.pdb
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\Level1.csprojResolveAssemblyReference.cache
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\Level1.exe
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\Level1.pdb

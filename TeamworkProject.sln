@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RolePlayingGame", "RolePlayingGame\RolePlayingGame.csproj", "{1298A5A3-0248-47E3-9A54-E92D4E588051}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextureAtlases", "TextureAtlases\TextureAtlases\TextureAtlases.csproj", "{41913B52-5B93-4568-A253-4342F091CEBF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextureAtlasesContent", "TextureAtlases\TextureAtlasesContent\TextureAtlasesContent.contentproj", "{8D8ACC1F-C2A1-4234-8588-812610CF93B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level1", "Level1\Level1\Level1.csproj", "{3C802D49-A0A5-447D-AA7F-270C12C17515}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Level1Content", "Level1\Level1Content\Level1Content.contentproj", "{CB29FB13-7CAE-43B1-A352-614BFBBAC3AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,22 @@ Global
 		{8D8ACC1F-C2A1-4234-8588-812610CF93B0}.Release|Any CPU.ActiveCfg = Release|x86
 		{8D8ACC1F-C2A1-4234-8588-812610CF93B0}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{8D8ACC1F-C2A1-4234-8588-812610CF93B0}.Release|x86.ActiveCfg = Release|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Debug|x86.ActiveCfg = Debug|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Debug|x86.Build.0 = Debug|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Release|Any CPU.ActiveCfg = Release|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Release|Mixed Platforms.Build.0 = Release|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Release|x86.ActiveCfg = Release|x86
+		{3C802D49-A0A5-447D-AA7F-270C12C17515}.Release|x86.Build.0 = Release|x86
+		{CB29FB13-7CAE-43B1-A352-614BFBBAC3AD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CB29FB13-7CAE-43B1-A352-614BFBBAC3AD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{CB29FB13-7CAE-43B1-A352-614BFBBAC3AD}.Debug|x86.ActiveCfg = Debug|x86
+		{CB29FB13-7CAE-43B1-A352-614BFBBAC3AD}.Release|Any CPU.ActiveCfg = Release|x86
+		{CB29FB13-7CAE-43B1-A352-614BFBBAC3AD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{CB29FB13-7CAE-43B1-A352-614BFBBAC3AD}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

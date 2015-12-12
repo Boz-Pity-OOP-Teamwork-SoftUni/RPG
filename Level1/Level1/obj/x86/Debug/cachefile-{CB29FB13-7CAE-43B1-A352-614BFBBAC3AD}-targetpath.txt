@@ -1,0 +1,4 @@
+Content\Monsters\monster1.xnb
+Content\Monsters\monster2.xnb
+Content\Monsters\monster3.xnb
+Content\Background\level1.xnb
