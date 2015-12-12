@@ -10,21 +10,24 @@
         private int attackPoints;
         private int defencePoints;
         private double critChance;
-        private double critDmg;
         private double dodgeChance;
 
-        public WearableItem(string id, string name, int attackPoints, int defencePoints, double critChance, double critDmg, double dodgeChance) : base(id, name)
+        public WearableItem(string id, string name, WearableItemType itemType
+            , int attackPoints, int defencePoints, double critChance, double dodgeChance) 
+            : base(id, name)
         {
-            this.attackPoints = attackPoints;
-            this.defencePoints = defencePoints;
-            this.critChance = critChance;
-            this.critDmg = critDmg;
-            this.dodgeChance = dodgeChance;
+            this.ItemType = itemType;
+            this.AttackPoints = attackPoints;
+            this.DefencePoints = defencePoints;
+            this.CritChance = critChance;
+            this.DodgeChance = dodgeChance;
+            
         }
 
         public WearableItemType ItemType
         {
-            get { return this.ItemType; }
+            get { return this.itemType; }
+            private set { this.itemType = value; }
         }
 
         public int AttackPoints
@@ -75,22 +78,7 @@
             }
         }
 
-        public double CritDmg
-        {
-            get
-            {
-                return this.critDmg;
-            }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Crit damage cannot be negative");
-                }
-
-                this.critDmg = value;
-            }
-        }
+  
 
         public double DodgeChance
         {
@@ -111,12 +99,10 @@
 
         public override string ToString()
         {
-            string result = base.ToString() + string.Format(
-                "Type:{0}, Attack:{1}, Defence:{2}, Crit Chance:{3}, Crit Damage:{4}, Dodge Chance: {5} ",
-                this.ItemType, this.AttackPoints, this.DefencePoints, this.CritChance, this.CritDmg,
-                this.DodgeChance);
-
-            return result;
+            return string.Format("Item type {0},Attack points {1}, Deffence points {2}, Crit chance {3}, " +
+                                 "Dodge chance {4}",
+                this.ItemType, this.AttackPoints, this.DefencePoints
+                , this.CritChance, this.DodgeChance);
         }
     }
 }

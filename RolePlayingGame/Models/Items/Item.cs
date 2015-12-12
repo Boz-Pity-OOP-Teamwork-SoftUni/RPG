@@ -24,12 +24,10 @@
                 {
                     throw new ArgumentNullException("Item name cannot be empty or null");
                 }
+                this.name = value;
             }
         }
 
-        public override string ToString()
-        {
-            return String.Format("Item: {0}, Name = {1}", base.ToString(), this.Name);
-        }
+        
     }
 }

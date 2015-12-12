@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RandomNameGeneratorLibrary, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RandomNameGeneratorLibrary.1.0.5.1\lib\net45\RandomNameGeneratorLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,9 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Characters\Character.cs" />
+    <Compile Include="Models\Characters\Monsters\Loot.cs" />
     <Compile Include="Models\Characters\Monsters\Monster.cs" />
     <Compile Include="Models\Characters\Players\Hero.cs" />
     <Compile Include="Enums\WearableItemType.cs" />
+    <Compile Include="Models\Events\CharacterDiedEventArgs.cs" />
+    <Compile Include="Models\Events\CharacterDiedEventHandler.cs" />
+    <Compile Include="Models\Events\MonsterDiedEventArgs.cs" />
+    <Compile Include="Models\Events\HeroDiedEventArgs.cs" />
     <Compile Include="Models\GameObject.cs" />
     <Compile Include="Interfaces\IAttackable.cs" />
     <Compile Include="Interfaces\IConsumeable.cs" />
@@ -62,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

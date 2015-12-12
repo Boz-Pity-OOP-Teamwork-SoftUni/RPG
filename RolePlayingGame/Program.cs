@@ -1,4 +1,9 @@
-﻿namespace RolePlayingGame
+﻿using RolePlayingGame.Enums;
+using RolePlayingGame.Models.Characters;
+using RolePlayingGame.Models.Events;
+using RolePlayingGame.Models.Items;
+
+namespace RolePlayingGame
 {
     using Models.Characters.Players;
     using Models.Characters.Monsters;
@@ -8,10 +13,21 @@
     {
         public static void Main(string[] args)
         {
-            Hero hero = new Hero("1", 0, 0, 100, 20, 30, 24, 1.5, 15);
-            Monster monster = new Monster("23", 1, 3, 150, 5, 30, 13.5, 1.3, 20, 100);
-            
-            while (hero.IsAlive == true && monster.IsAlive == true)
+
+            Character hero = new Hero("1", 0, 0, "pesho", 10, 200, 300, 24, 1.5, 15, 1);
+            Character monster = new Monster("23", 1, 3, "gosho", 150, 50, 30, 13.5, 1.3, 20, 3, 100);
+            hero.characterDied += (sender, eventArgs) =>
+            {
+                Console.WriteLine(eventArgs.Message);
+            };
+            monster.characterDied += (sender, eventArgs) =>
+            {
+                Console.WriteLine(eventArgs.Message);
+                Console.WriteLine(eventArgs.Drop);
+
+                Console.WriteLine(eventArgs.XP);
+            };
+            while (hero.IsAlive == true && monster.IsAlive)
             {
                 hero.Attack(monster);
                 monster.Attack(hero);

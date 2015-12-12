@@ -12,8 +12,6 @@
 
         double CritChance { get; set; }
 
-        double CritDmg { get; set; }
-
         double DodgeChance { get; set; }
     }
 }

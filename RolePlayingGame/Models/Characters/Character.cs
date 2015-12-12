@@ -1,43 +1,52 @@
-﻿namespace RolePlayingGame.Models.Characters
+﻿using RolePlayingGame.Models.Events;
+
+namespace RolePlayingGame.Models.Characters
 {
     using System;
     using System.Collections.Generic;
     using RolePlayingGame.Interfaces;
     using Items;
-    using Players;
 
     public abstract class Character : GameObject, IAttackable, IDefendable
+
     {
         private int x;
         private int y;
+        private string name;
         private int healthPoints;
         private double defensePoints;
         private double attackPoints;
         private double criticalChance;
         private double criticalMultiplier;
         private double dodgeChange;
-
+        private int level;
         private double fullAttack;
         private double fullDefence;
         private double fullCrit;
         private double fullDodge;
-
+        public event CharacterDiedEventHandler characterDied;
         protected Character(string id, int x, int y, int healthPoints
-            , double defensePoints, double attackPoints, double criticalChance, double criticalMultiplier
-            , double dodgeChance) 
+            , string name
+            , double defensePoints, double attackPoints, double criticalChance
+            , double criticalMultiplier
+            , double dodgeChance
+            , int level)
             : base(id)
         {
             this.X = x;
             this.Y = y;
+            this.Name = name;
             this.HealthPoints = healthPoints;
             this.DefensePoints = defensePoints;
             this.AttackPoints = attackPoints;
             this.CriticalChance = criticalChance;
             this.CriticalMultiplier = criticalMultiplier;
             this.DodgeChance = dodgeChance;
+            this.Level = level;
             this.IsAlive = true;
             this.Inventory = new Inventory();
             this.Equipment = new Equipment();
+            this.CharacterDiedEventArgs = new CharacterDiedEventArgs(name);
         }
 
         public int X
@@ -69,6 +78,15 @@
                 this.y = value;
             }
         }
+
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+                
+        }
+
+        public CharacterDiedEventArgs CharacterDiedEventArgs { get; set; }
 
         public int HealthPoints
         {
@@ -160,6 +178,12 @@
             }
         }
 
+        public int Level
+        {
+            get { return this.level; }
+            set { this.level = value; }
+        }
+
         public bool IsAlive { get; set; }
 
         public Inventory Inventory { get; private set; }
@@ -215,7 +239,7 @@
             }
             else
             {
-                double actualDamage = damage - this.DefensePoints;
+                double actualDamage = damage - this.fullDefence;
 
                 if (actualDamage < 0)
                 {
@@ -225,12 +249,21 @@
                 this.HealthPoints -= (int)actualDamage;
 
                 if (this.HealthPoints <= 0)
-                {
-                    this.IsAlive = false;
+                {                
+                    this.onCharacterDied();
                 }
             }
         }
-        
+
+        protected virtual void onCharacterDied()
+        {           
+            if (this.characterDied != null)
+            {
+                this.IsAlive = false;
+                this.characterDied(this, this.CharacterDiedEventArgs);
+            }
+        }
+
         private void CalculateStats()
         {
             this.fullAttack = this.AttackPoints;
