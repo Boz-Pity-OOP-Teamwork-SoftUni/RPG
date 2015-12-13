@@ -2,13 +2,13 @@
 {
     public enum WearableItemType
     {
-        TwoHandWeapon,
-        OneHandWeapon,
-        Shield,
-        Helm,
-        Chest,
+        Gloves,
         Boots,
         Legs,
-        Gloves
+        Chest,
+        Helm,
+        Shield,
+        OneHandWeapon,
+        TwoHandWeapon
     }
 }

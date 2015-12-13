@@ -10,8 +10,7 @@ namespace RolePlayingGame.Models.Characters
     public abstract class Character : GameObject, IAttackable, IDefendable
 
     {
-        private int x;
-        private int y;
+       
         private string name;
         private int healthPoints;
         private double defensePoints;
@@ -25,7 +24,7 @@ namespace RolePlayingGame.Models.Characters
         private double fullCrit;
         private double fullDodge;
         public event CharacterDiedEventHandler characterDied;
-        protected Character(string id, int x, int y, int healthPoints
+        protected Character(string id, Position position, int healthPoints
             , string name
             , double defensePoints, double attackPoints, double criticalChance
             , double criticalMultiplier
@@ -33,8 +32,7 @@ namespace RolePlayingGame.Models.Characters
             , int level)
             : base(id)
         {
-            this.X = x;
-            this.Y = y;
+            this.Position = position;
             this.Name = name;
             this.HealthPoints = healthPoints;
             this.DefensePoints = defensePoints;
@@ -49,35 +47,7 @@ namespace RolePlayingGame.Models.Characters
             this.CharacterDiedEventArgs = new CharacterDiedEventArgs(name);
         }
 
-        public int X
-        {
-            get { return this.x; }
-            set
-            {
-                // TODO: Validation
-                if (value < 0)
-                {
-                    return;
-                }
-
-                this.x = value;
-            }
-        }
-
-        public int Y
-        {
-            get { return this.y; }
-            set
-            {
-                // TODO: Validation
-                if (value < 0)
-                {
-                    return;
-                }
-
-                this.y = value;
-            }
-        }
+        public Position Position { get; set; }
 
         public string Name
         {

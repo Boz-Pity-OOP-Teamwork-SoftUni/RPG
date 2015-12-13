@@ -9,19 +9,18 @@ namespace RolePlayingGame.Models.Events
     public class CharacterDiedEventArgs
     {
         private string message = "YOU DIED!";
-        public CharacterDiedEventArgs(string characterName)
-        {
-            CharacterName = characterName;
-            this.Drop = null;
-            this.XP = null;
-        }
-
-        public CharacterDiedEventArgs(string message, string characterName, int xp, Item drop)
+        public CharacterDiedEventArgs(string message, string characterName, int? xp, Item drop)
         {
             this.message = message;
             CharacterName = characterName;
             XP = xp;
             Drop = drop;
+        }
+
+        public CharacterDiedEventArgs(string characterName)
+            :this(characterName,null,null,null)
+        {
+            CharacterName = characterName;
         }
 
         public string CharacterName { get; set; }

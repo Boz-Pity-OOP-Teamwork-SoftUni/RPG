@@ -9,10 +9,10 @@ namespace RolePlayingGame.Models.Characters.Players
 
     public class Hero : Character, IMovable
     {
-        public Hero(string id, int x, int y, string name, int healthPoints
+        public Hero(string id, Position position, string name, int healthPoints
             , double defensePoints, double attackPoints, double critChance,
             double critMultiplier, double dodgeChance, int level)
-            : base(id, x, y, healthPoints,name, defensePoints, attackPoints
+            : base(id, position, healthPoints,name, defensePoints, attackPoints
                   , critChance, critMultiplier, dodgeChance, level)
         {
         }

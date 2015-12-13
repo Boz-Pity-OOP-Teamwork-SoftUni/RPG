@@ -35,14 +35,31 @@ namespace RolePlayingGame.Models.Characters.Monsters
                 var name = new PersonNameGenerator().GenerateRandomMaleFirstName() +
                            new PlaceNameGenerator().GenerateRandomPlaceName();
 
-                Item wearableItem = new WearableItem(
-                    id,
-                   name,
-                    itemType,
-                    this.attackPoints*level,
-                    this.defencePoints*level,
-                    this.critChance*level,
-                    this.dodgeChance*level);
+                Item wearableItem = null;
+                if (itemType == WearableItemType.Shield)
+                {
+                     wearableItem = new WearableItem(
+                  id,
+                 name,
+                  itemType,
+                  0,
+                  this.defencePoints * level + i,
+                  0,
+                  0);
+                }
+                else
+                {
+                     wearableItem = new WearableItem(
+                  id,
+                 name,
+                  itemType,
+                  this.attackPoints * level + i,
+                  this.defencePoints * level + i,
+                  this.critChance * level + i,
+                  this.dodgeChance * level + i);
+                }   
+              
+                
                 loot.Add(wearableItem);
             }
             Item potion = new HealthPotion(level+"HP",string.Format("Health Potion Level {0}",level)

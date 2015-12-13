@@ -11,11 +11,11 @@ namespace RolePlayingGame.Models.Characters.Monsters
         private int experience;
         private Loot loot;
      
-        public Monster(string id, int x, int y, string name, int healthPoints
+        public Monster(string id, Position position, string name, int healthPoints
             , int defensePoints, int attackPoints, double critChance
             , double critMultiplier, double dodgeChance, int level, int experience            
             ) 
-            : base(id, x, y, healthPoints,name, defensePoints, attackPoints
+            : base(id, position, healthPoints,name, defensePoints, attackPoints
                   , critChance, critMultiplier, dodgeChance,level)
         {
             this.Experience = experience;
