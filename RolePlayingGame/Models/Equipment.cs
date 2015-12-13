@@ -88,7 +88,6 @@ namespace RolePlayingGame.Models
                     }
                     catch (EquipItemException e)
                     {
-                        Console.WriteLine(e.Message);
                     }
                     finally
                     {

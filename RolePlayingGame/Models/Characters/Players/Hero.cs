@@ -51,9 +51,19 @@ namespace RolePlayingGame.Models.Characters.Players
             if (this.levelUp != null)
             {
                 this.Level++;
-                this.XpToNextLevel = this.Level*XpBase;
+                this.XpToNextLevel = this.Level*XpBase+(XpBase*2);
+                UpdateStats();
                 LevelUpEventArgs args = new LevelUpEventArgs(this.Level,this.XpToNextLevel);
             }
+        }
+
+        private void UpdateStats()
+        {
+            this.AttackPoints += Math.Pow(this.Level,4);
+            this.DefensePoints += Math.Pow(this.Level, 4);
+            this.CriticalChance += Math.Pow(this.Level, 4);
+            this.DodgeChance += Math.Pow(this.Level, 4);
+            this.CriticalMultiplier += Math.Pow(this.Level, 4) / 10;
         }
     }
 }
