@@ -70,10 +70,20 @@ namespace RolePlayingGame.Models.Characters.Monsters
         public Item GetLoot()
         {
             Random rand = new Random();
-            var shuffledLoot = loot.OrderBy(x => rand.Next()).ToList();
+            var shuffledLoot = loot.OrderBy(x => rand.Next())
+                .ToList();
             return shuffledLoot[0];
         }
 
+        public List<IWearableItem> GetBasicEquipment()
+        {
+            Random rand = new Random();
+            var items = this.loot.OrderBy(x=>rand.Next())
+                .Where(item=>item is IWearableItem)
+                .Cast<IWearableItem>()
+                .ToList();
+            return items;
+        } 
 
     }
 }

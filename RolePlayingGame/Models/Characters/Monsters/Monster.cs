@@ -12,7 +12,7 @@ namespace RolePlayingGame.Models.Characters.Monsters
         private Loot loot;
      
         public Monster(string id, Position position, string name, int healthPoints
-            , int defensePoints, int attackPoints, double critChance
+            , double defensePoints, double attackPoints, double critChance
             , double critMultiplier, double dodgeChance, int level, int experience            
             ) 
             : base(id, position, healthPoints,name, defensePoints, attackPoints

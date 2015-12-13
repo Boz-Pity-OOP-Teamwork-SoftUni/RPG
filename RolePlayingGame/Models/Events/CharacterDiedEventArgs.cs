@@ -21,6 +21,7 @@ namespace RolePlayingGame.Models.Events
             :this(characterName,null,null,null)
         {
             CharacterName = characterName;
+            
         }
 
         public string CharacterName { get; set; }

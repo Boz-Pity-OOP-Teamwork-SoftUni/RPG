@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\EquipItemException.cs" />
+    <Compile Include="Game Engine\Engine.cs" />
+    <Compile Include="Interfaces\Runnable.cs" />
     <Compile Include="Models\Characters\Character.cs" />
     <Compile Include="Models\Characters\Monsters\Loot.cs" />
     <Compile Include="Models\Characters\Monsters\Monster.cs" />
@@ -53,6 +56,8 @@
     <Compile Include="Models\Characters\Position.cs" />
     <Compile Include="Models\Events\CharacterDiedEventArgs.cs" />
     <Compile Include="Models\Events\CharacterDiedEventHandler.cs" />
+    <Compile Include="Models\Events\LevelUpEventArgs.cs" />
+    <Compile Include="Models\Events\LevelUpEventHandler.cs" />
     <Compile Include="Models\GameObject.cs" />
     <Compile Include="Interfaces\IAttackable.cs" />
     <Compile Include="Interfaces\IConsumeable.cs" />

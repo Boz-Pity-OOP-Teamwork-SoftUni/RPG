@@ -220,17 +220,17 @@ namespace RolePlayingGame.Models.Characters
 
                 if (this.HealthPoints <= 0)
                 {                
-                    this.onCharacterDied();
+                    this.OnCharacterDied();
                 }
             }
         }
 
-        protected virtual void onCharacterDied()
+        protected virtual void OnCharacterDied()
         {           
             if (this.characterDied != null)
             {
                 this.IsAlive = false;
-                this.characterDied(this, this.CharacterDiedEventArgs);
+                this.characterDied(this, this.CharacterDiedEventArgs);               
             }
         }
 
@@ -243,10 +243,10 @@ namespace RolePlayingGame.Models.Characters
 
             foreach (var item in this.Equipment.EquipedItems)
             {
-                this.fullAttack = item.Value.AttackPoints;
-                this.fullDefence = item.Value.DefencePoints;
-                this.fullCrit = item.Value.CritChance;
-                this.fullDodge = item.Value.DodgeChance;
+                this.fullAttack += item.Value.AttackPoints;
+                this.fullDefence += item.Value.DefencePoints;
+                this.fullCrit += item.Value.CritChance;
+                this.fullDodge += item.Value.DodgeChance;
             }
         }
     }

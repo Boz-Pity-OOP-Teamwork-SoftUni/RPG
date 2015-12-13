@@ -1,6 +1,9 @@
-﻿namespace RolePlayingGame.Interfaces
+﻿using RolePlayingGame.Models.Characters;
+
+namespace RolePlayingGame.Interfaces
 {
-    interface IMovable
+    public interface IMovable
     {
+        void Move(Position position);
     }
 }
