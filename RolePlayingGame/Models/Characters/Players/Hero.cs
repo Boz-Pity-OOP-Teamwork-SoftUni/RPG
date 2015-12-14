@@ -1,11 +1,9 @@
-﻿using System;
-using System.ComponentModel;
-using RolePlayingGame.Models.Events;
-
-namespace RolePlayingGame.Models.Characters.Players
+﻿namespace RolePlayingGame.Models.Characters.Players
 {
     using System.Collections.Generic;
     using Interfaces;
+    using System;
+    using RolePlayingGame.Models.Events;
 
     public class Hero : Character, IMovable
     {

@@ -24,10 +24,9 @@
                 {
                     throw new ArgumentNullException("Item name cannot be empty or null");
                 }
+
                 this.name = value;
             }
-        }
-
-        
+        }        
     }
 }

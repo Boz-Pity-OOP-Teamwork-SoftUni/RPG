@@ -1,29 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RolePlayingGame.Enums;
-using RolePlayingGame.Interfaces;
-using RolePlayingGame.Models.Items;
-using RandomNameGeneratorLibrary;
-namespace RolePlayingGame.Models.Characters.Monsters
+﻿namespace RolePlayingGame.Models.Characters.Monsters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using RolePlayingGame.Enums;
+    using RolePlayingGame.Interfaces;
+    using RolePlayingGame.Models.Items;
+    using RandomNameGeneratorLibrary;
+
     public class Loot
     {
         private List<Item> loot;
         public WearableItemType itemType;
-        private int attackPoints=10;
-        private int defencePoints=5;
-        private double critChance=10;
-        private double dodgeChance=0.1;
-        private int healthUpdate=10;
+        private int attackPoints = 10;
+        private int defencePoints = 5;
+        private double critChance = 10;
+        private double dodgeChance = 0.1;
+        private int healthUpdate = 10;
+
         public Loot(int level)
         {
             this.loot = new List<Item>(12);
             Init(level);
         }
-
 
         private void Init(int level)
         {
@@ -36,32 +35,34 @@ namespace RolePlayingGame.Models.Characters.Monsters
                            new PlaceNameGenerator().GenerateRandomPlaceName();
 
                 Item wearableItem = null;
+
                 if (itemType == WearableItemType.Shield)
                 {
                      wearableItem = new WearableItem(
-                  id,
-                 name,
-                  itemType,
-                  0,
-                  this.defencePoints * level + i,
-                  0,
-                  0);
+                          id,
+                         name,
+                          itemType,
+                          0,
+                          this.defencePoints * level + i,
+                          0,
+                          0);
                 }
                 else
                 {
                      wearableItem = new WearableItem(
-                  id,
-                 name,
-                  itemType,
-                  this.attackPoints * level + i,
-                  this.defencePoints * level + i,
-                  this.critChance * level + i,
-                  this.dodgeChance * level + i);
+                          id,
+                         name,
+                          itemType,
+                          this.attackPoints * level + i,
+                          this.defencePoints * level + i,
+                          this.critChance * level + i,
+                          this.dodgeChance * level + i);
                 }   
               
                 
                 loot.Add(wearableItem);
             }
+
             Item potion = new HealthPotion(level+"HP",string.Format("Health Potion Level {0}",level)
                 ,this.healthUpdate*level);
             loot.Add(potion);
@@ -82,8 +83,8 @@ namespace RolePlayingGame.Models.Characters.Monsters
                 .Where(item=>item is IWearableItem)
                 .Cast<IWearableItem>()
                 .ToList();
-            return items;
-        } 
 
+            return items;
+        }
     }
 }

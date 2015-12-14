@@ -1,8 +1,7 @@
-﻿using System;
-using RolePlayingGame.Models.Events;
-
-namespace RolePlayingGame.Models.Characters.Monsters
+﻿namespace RolePlayingGame.Models.Characters.Monsters
 {
+    using System;
+    using RolePlayingGame.Models.Events;
     using System.Collections.Generic;
     using Interfaces;
 
@@ -11,12 +10,11 @@ namespace RolePlayingGame.Models.Characters.Monsters
         private int experience;
         private Loot loot;
      
-        public Monster(string id, Position position, string name, int healthPoints
-            , double defensePoints, double attackPoints, double critChance
-            , double critMultiplier, double dodgeChance, int level, int experience            
-            ) 
-            : base(id, position, healthPoints,name, defensePoints, attackPoints
-                  , critChance, critMultiplier, dodgeChance,level)
+        public Monster(string id, Position position, string name, int healthPoints, 
+            double defensePoints, double attackPoints, double critChance,
+            double critMultiplier, double dodgeChance, int level, int experience) 
+            : base(id, position, healthPoints,name, defensePoints, attackPoints, 
+                critChance, critMultiplier, dodgeChance,level)
         {
             this.Experience = experience;
             loot = new Loot(level);
@@ -28,9 +26,7 @@ namespace RolePlayingGame.Models.Characters.Monsters
         {
             get { return this.experience; }
             set { this.experience = value; }
-        }
-
-       
+        }       
         
         public override Character GetTarget(IEnumerable<Character> targetsList)
         {

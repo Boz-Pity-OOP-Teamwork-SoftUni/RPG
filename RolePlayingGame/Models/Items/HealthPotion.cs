@@ -25,6 +25,7 @@
                 this.healthUpdate = value;
             }
         }
+
         public override void Consume(Character target)
         {
             target.HealthPoints += this.HealthUpdate;

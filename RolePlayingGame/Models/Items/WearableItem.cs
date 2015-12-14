@@ -76,9 +76,7 @@
 
                 this.critChance = value;
             }
-        }
-
-  
+        }  
 
         public double DodgeChance
         {
@@ -99,10 +97,12 @@
 
         public override string ToString()
         {
-            return string.Format("Item type {0},Attack points {1}, Deffence points {2}, Crit chance {3}, " +
+            string result = string.Format("Item type {0},Attack points {1}, Deffence points {2}, Crit chance {3}, " +
                                  "Dodge chance {4}",
                 this.ItemType, this.AttackPoints, this.DefencePoints
                 , this.CritChance, this.DodgeChance);
+
+            return result;
         }
     }
 }

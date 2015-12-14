@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RolePlayingGame.Models.Characters
+﻿namespace RolePlayingGame.Models.Characters
 {
     public struct Position
     {
@@ -13,7 +7,9 @@ namespace RolePlayingGame.Models.Characters
             X = x;
             Y = y;
         }
+
         public int  X { get; set; }
+        
         public int Y { get; set; }
     }
 }

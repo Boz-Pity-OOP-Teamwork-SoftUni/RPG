@@ -1,11 +1,10 @@
-﻿using RolePlayingGame.Models.Events;
-
-namespace RolePlayingGame.Models.Characters
+﻿namespace RolePlayingGame.Models.Characters
 {
     using System;
     using System.Collections.Generic;
     using RolePlayingGame.Interfaces;
     using Items;
+    using RolePlayingGame.Models.Events;
 
     public abstract class Character : GameObject, IAttackable, IDefendable
 
@@ -24,6 +23,7 @@ namespace RolePlayingGame.Models.Characters
         private double fullCrit;
         private double fullDodge;
         public event CharacterDiedEventHandler characterDied;
+
         protected Character(string id, Position position, int healthPoints
             , string name
             , double defensePoints, double attackPoints, double criticalChance
@@ -194,7 +194,6 @@ namespace RolePlayingGame.Models.Characters
 
             target.Defend(this.fullAttack);
         }
-
 
         public void Defend(double damage)
         {

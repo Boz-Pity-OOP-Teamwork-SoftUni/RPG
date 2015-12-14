@@ -1,11 +1,10 @@
-﻿using RolePlayingGame.Exceptions;
-
-namespace RolePlayingGame.Models
+﻿namespace RolePlayingGame.Models
 {
     using System;
     using System.Collections.Generic;
     using RolePlayingGame.Enums;
     using RolePlayingGame.Interfaces;
+    using RolePlayingGame.Exceptions;
 
     public class Equipment
     {
@@ -63,6 +62,7 @@ namespace RolePlayingGame.Models
             {
                 throw new ArgumentNullException("item cannot be null");
             }
+
             this.equipedItems.Remove(item.ItemType);
         }
 
@@ -94,10 +94,8 @@ namespace RolePlayingGame.Models
                         set.Remove(set[i]);
                     }
                 }
-            }
-            
+            }            
         }
-
 
         private bool isEquipedWith2hWeapon()
         {
@@ -105,6 +103,7 @@ namespace RolePlayingGame.Models
             {
                 return true;
             }
+
             return false;
         }
 
@@ -115,6 +114,7 @@ namespace RolePlayingGame.Models
             {
                 return true;
             }
+
             return false;
         }
 
