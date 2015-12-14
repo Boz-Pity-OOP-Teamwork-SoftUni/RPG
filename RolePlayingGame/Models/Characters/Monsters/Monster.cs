@@ -17,7 +17,7 @@
                 critChance, critMultiplier, dodgeChance,level)
         {
             this.Experience = experience;
-            loot = new Loot(level);
+            this.loot = new Loot(level);
             this.CharacterDiedEventArgs =
                 new CharacterDiedEventArgs(string.Format("{0} died", name), name, experience, loot.GetLoot());
         }

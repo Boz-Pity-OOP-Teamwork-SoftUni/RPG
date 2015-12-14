@@ -11,11 +11,11 @@
         private int? xpToNextLvl;
         public event LevelUpEventHandler levelUp;
 
-        public Hero(string id, Position position, string name, int healthPoints
-            , double defensePoints, double attackPoints, double critChance,
+        public Hero(string id, Position position, string name, int healthPoints,
+            double defensePoints, double attackPoints, double critChance,
             double critMultiplier, double dodgeChance, int level)
-            : base(id, position, healthPoints,name, defensePoints, attackPoints
-                  , critChance, critMultiplier, dodgeChance, level)
+            : base(id, position, healthPoints,name, defensePoints, attackPoints,
+                  critChance, critMultiplier, dodgeChance, level)
         {
             this.XpToNextLevel = level * XpBase;
         }

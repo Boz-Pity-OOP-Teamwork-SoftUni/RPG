@@ -9,16 +9,15 @@
         public CharacterDiedEventArgs(string message, string characterName, int? xp, Item drop)
         {
             this.message = message;
-            CharacterName = characterName;
-            XP = xp;
-            Drop = drop;
+            this.CharacterName = characterName;
+            this.XP = xp;
+            this.Drop = drop;
         }
 
         public CharacterDiedEventArgs(string characterName)
-            :this(characterName,null,null,null)
+            : this(characterName, null, null, null)
         {
-            CharacterName = characterName;
-            
+            this.CharacterName = characterName;            
         }
 
         public string CharacterName { get; set; }

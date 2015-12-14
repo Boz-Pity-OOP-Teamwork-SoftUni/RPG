@@ -29,7 +29,7 @@
             double criticalMultiplier,
             double dodgeChance,
             int level)
-            : base(id)
+                : base(id)
         {
             this.Position = position;
             this.Name = name;

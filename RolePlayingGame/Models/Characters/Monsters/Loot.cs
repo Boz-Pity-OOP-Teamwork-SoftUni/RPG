@@ -30,7 +30,7 @@
             {
                 itemType = (WearableItemType)Enum.ToObject(typeof(WearableItemType), i);
                 
-                var id = (((i+1)*level)).ToString();
+                var id = (((i + 1) * level)).ToString();
                 var name = new PersonNameGenerator().GenerateRandomMaleFirstName() +
                            new PlaceNameGenerator().GenerateRandomPlaceName();
 
@@ -57,15 +57,14 @@
                           this.defencePoints * level + i,
                           this.critChance * level + i,
                           this.dodgeChance * level + i);
-                }   
-              
+                }              
                 
-                loot.Add(wearableItem);
+                this.loot.Add(wearableItem);
             }
 
-            Item potion = new HealthPotion(level+"HP",string.Format("Health Potion Level {0}",level)
-                ,this.healthUpdate*level);
-            loot.Add(potion);
+            Item potion = new HealthPotion(level + "HP", string.Format("Health Potion Level {0}", level),
+                this.healthUpdate * level);
+            this.loot.Add(potion);
         }
 
         public Item GetLoot()
@@ -73,14 +72,15 @@
             Random rand = new Random();
             var shuffledLoot = loot.OrderBy(x => rand.Next())
                 .ToList();
+
             return shuffledLoot[0];
         }
 
         public List<IWearableItem> GetBasicEquipment()
         {
             Random rand = new Random();
-            var items = this.loot.OrderBy(x=>rand.Next())
-                .Where(item=>item is IWearableItem)
+            var items = this.loot.OrderBy(x => rand.Next())
+                .Where(item => item is IWearableItem)
                 .Cast<IWearableItem>()
                 .ToList();
 
