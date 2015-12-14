@@ -19,7 +19,7 @@
         {
             hero.Equipment.AddSet(new Loot(1).GetBasicEquipment());
 
-            iniztializeMonsters();
+            IniztializeMonsters();
 
             foreach (var monster in monsters)
             {
@@ -41,10 +41,10 @@
                 }
             }
          
-            Console.WriteLine(this.hero.Inventory.InventoryItems);
+            Console.WriteLine(hero.Inventory);
         }
         
-        private void iniztializeMonsters()
+        private void IniztializeMonsters()
         {
             int baseHealth = 10;
             double baseDmg = 10;
@@ -52,7 +52,7 @@
             double baseCrit = 0.5;
             double baseDodge = 0.5;
             double baseCritMultiplier = 0.3;
-            int    baseXp = 100;
+            int baseXp = 100;
 
             for (int i = 1; i < 10; i++)
             {
@@ -70,7 +70,7 @@
                     baseXp * i);
 
                 List<IWearableItem> items = new Loot(i).GetBasicEquipment();              
-                    monster.Equipment.AddSet(items);
+                monster.Equipment.AddSet(items);
                     
                 this.monsters.Add(monster);                            
             }
@@ -88,14 +88,31 @@
             {
                 this.hero.XpToNextLevel -= eventArgs.XP;
                 this.hero.Inventory.AddItem(eventArgs.Drop);
-
             };
          
             while (hero.IsAlive && monster.IsAlive)
             {
-                hero.Attack(monster);
                 monster.Attack(hero);
+                hero.Attack(monster);
 
+                PrintCurrentFight(monster);
+            }
+        }
+
+        private void PrintCurrentFight(Monster monster)
+        {
+            if (hero.IsAlive == false)
+            {
+                Console.WriteLine("Hero {0} is dead.", hero.Name);
+                Console.WriteLine("Monster health = " + monster.HealthPoints);
+            }
+            else if (monster.IsAlive == false)
+            {
+                Console.WriteLine("Monster {0} is dead", monster.Name);
+                Console.WriteLine("Hero health = " + hero.HealthPoints);
+            }
+            else
+            {
                 Console.WriteLine("Hero health = " + hero.HealthPoints);
                 Console.WriteLine("Monster health = " + monster.HealthPoints);
             }

@@ -180,6 +180,11 @@
 
         public void Attack(Character target)
         {
+            if (this.IsAlive == false)
+            {
+                return;
+            }
+
             CalculateStats();
 
             double chance = new Random().NextDouble();
@@ -208,7 +213,7 @@
             {
                 double actualDamage = damage - this.fullDefence;
 
-                if (actualDamage < 0)
+                if (actualDamage < 0.0)
                 {
                     actualDamage = 0;
                 }
@@ -216,7 +221,7 @@
                 this.HealthPoints -= (int)actualDamage;
 
                 if (this.HealthPoints <= 0)
-                {                
+                {
                     this.OnCharacterDied();
                 }
             }
@@ -227,6 +232,7 @@
             if (this.characterDied != null)
             {
                 this.IsAlive = false;
+                this.HealthPoints = 0;
                 this.characterDied(this, this.CharacterDiedEventArgs);               
             }
         }
