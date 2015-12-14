@@ -10,13 +10,14 @@
         private const int XpBase = 100;
         private int? xpToNextLvl;
         public event LevelUpEventHandler levelUp;
+
         public Hero(string id, Position position, string name, int healthPoints
             , double defensePoints, double attackPoints, double critChance,
             double critMultiplier, double dodgeChance, int level)
             : base(id, position, healthPoints,name, defensePoints, attackPoints
                   , critChance, critMultiplier, dodgeChance, level)
         {
-            this.XpToNextLevel = level*XpBase;
+            this.XpToNextLevel = level * XpBase;
         }
 
         public int? XpToNextLevel
@@ -25,19 +26,18 @@
             set
             {
                 this.xpToNextLvl = value;
+
                 if (this.xpToNextLvl <= 0)
                 {
                     this.OnLevelUp();
                 }
-            }
-            
+            }            
         }
 
         public override Character GetTarget(IEnumerable<Character> targetsList)
         {
             return (Character)targetsList;
         }
-
 
         public void Move(Position position)
         {
@@ -49,9 +49,9 @@
             if (this.levelUp != null)
             {
                 this.Level++;
-                this.XpToNextLevel = this.Level*XpBase+(XpBase*2);
+                this.XpToNextLevel = this.Level * XpBase + (XpBase * 2);
                 UpdateStats();
-                LevelUpEventArgs args = new LevelUpEventArgs(this.Level,this.XpToNextLevel);
+                LevelUpEventArgs args = new LevelUpEventArgs(this.Level, this.XpToNextLevel);
             }
         }
 

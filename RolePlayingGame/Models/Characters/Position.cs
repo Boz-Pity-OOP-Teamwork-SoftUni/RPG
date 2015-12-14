@@ -2,14 +2,14 @@
 {
     public struct Position
     {
+        private int PosX;
+
+        private int PosY;
+
         public Position(int x, int y)
         {
-            X = x;
-            Y = y;
+            this.PosX = x;
+            this.PosY = y;
         }
-
-        public int  X { get; set; }
-        
-        public int Y { get; set; }
     }
 }

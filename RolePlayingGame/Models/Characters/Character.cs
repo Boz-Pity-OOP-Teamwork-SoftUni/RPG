@@ -8,8 +8,7 @@
 
     public abstract class Character : GameObject, IAttackable, IDefendable
 
-    {
-       
+    {       
         private string name;
         private int healthPoints;
         private double defensePoints;
@@ -24,12 +23,12 @@
         private double fullDodge;
         public event CharacterDiedEventHandler characterDied;
 
-        protected Character(string id, Position position, int healthPoints
-            , string name
-            , double defensePoints, double attackPoints, double criticalChance
-            , double criticalMultiplier
-            , double dodgeChance
-            , int level)
+        protected Character(string id, Position position, int healthPoints,
+            string name,
+            double defensePoints, double attackPoints, double criticalChance,
+            double criticalMultiplier,
+            double dodgeChance,
+            int level)
             : base(id)
         {
             this.Position = position;
@@ -52,8 +51,7 @@
         public string Name
         {
             get { return this.name; }
-            set { this.name = value; }
-                
+            set { this.name = value; }                
         }
 
         public CharacterDiedEventArgs CharacterDiedEventArgs { get; set; }

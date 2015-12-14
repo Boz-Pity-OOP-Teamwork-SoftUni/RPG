@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Exceptions\EquipItemException.cs" />
     <Compile Include="Game_Engine\Engine.cs" />
-    <Compile Include="Interfaces\Runnable.cs" />
+    <Compile Include="Interfaces\IRunnable.cs" />
     <Compile Include="Models\Characters\Character.cs" />
     <Compile Include="Models\Characters\Monsters\Loot.cs" />
     <Compile Include="Models\Characters\Monsters\Monster.cs" />

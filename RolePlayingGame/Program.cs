@@ -1,9 +1,7 @@
-﻿
-
-namespace RolePlayingGame
+﻿namespace RolePlayingGame
 {
-
     using RolePlayingGame.Game_Engine;
+ 
     public class Program
     {
         public static void Main(string[] args)

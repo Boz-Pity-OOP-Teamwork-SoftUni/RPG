@@ -1,6 +1,6 @@
 ﻿namespace RolePlayingGame.Interfaces
 {
-    public interface Runnable
+    public interface IRunnable
     {
         void Run();
     }
