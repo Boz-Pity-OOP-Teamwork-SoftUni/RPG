@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster1.xnb</Output>
-      <Time>2015-12-12T23:16:09.4655647+02:00</Time>
+      <Time>2015-12-15T22:55:49.7818388+02:00</Time>
     </Item>
     <Item>
       <Source>Monsters\monster2.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster2.xnb</Output>
-      <Time>2015-12-12T23:16:16.5009671+02:00</Time>
+      <Time>2015-12-15T22:55:49.7828388+02:00</Time>
     </Item>
     <Item>
       <Source>Monsters\monster3.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster3.xnb</Output>
-      <Time>2015-12-12T23:16:22.5873152+02:00</Time>
+      <Time>2015-12-15T22:55:49.7848389+02:00</Time>
     </Item>
     <Item>
       <Source>Background\level1.png</Source>
@@ -35,7 +35,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Background\level1.xnb</Output>
-      <Time>2015-12-12T23:16:53.4320795+02:00</Time>
+      <Time>2015-12-15T22:57:23.0911758+02:00</Time>
+    </Item>
+    <Item>
+      <Source>MapFont.spritefont</Source>
+      <Name>MapFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\MapFont.xnb</Output>
+      <Time>2015-12-15T23:03:41.1638003+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

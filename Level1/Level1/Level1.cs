@@ -22,6 +22,12 @@ namespace Level1
         private Monster mMonster;
         private Monster mMonster2;
         private Monster mMonster3;
+        private SpriteFont font;
+        private int score = 0;
+        private int health = 0;
+        private int level = 1;
+        private double attack = 0;
+        private double defense = 0;
 
         public Level1()
         {
@@ -64,6 +70,7 @@ namespace Level1
             mMonster2.Position = new Vector2(350, 350);
             mMonster3.LoadContent(this.Content, "Monsters/monster3");
             mMonster3.Position = new Vector2(500, 55);
+            font = Content.Load<SpriteFont>("MapFont");
         }
 
         /// <summary>
@@ -106,6 +113,11 @@ namespace Level1
             mMonster.Draw(this.spriteBatch);
             mMonster2.Draw(this.spriteBatch);
             mMonster3.Draw(this.spriteBatch);
+            spriteBatch.DrawString(font, "Score: " + score, new Vector2(70, 510), Color.Yellow);
+            spriteBatch.DrawString(font, "Health: " + health, new Vector2(70, 555), Color.Red);
+            spriteBatch.DrawString(font, "Level: " + level, new Vector2(800, 5), Color.Red);
+            spriteBatch.DrawString(font, "Attack: " + attack, new Vector2(220, 510), Color.Green);
+            spriteBatch.DrawString(font, "Defense: " + defense, new Vector2(220, 555), Color.Red);
             spriteBatch.End();
 
             base.Draw(gameTime);

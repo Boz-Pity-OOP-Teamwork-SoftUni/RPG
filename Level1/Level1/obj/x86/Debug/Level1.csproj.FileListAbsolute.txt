@@ -8,3 +8,4 @@ C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\Level1.csprojResol
 C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\Level1.exe
 C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\Level1.pdb
+C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\MapFont.xnb
