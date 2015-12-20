@@ -10,6 +10,7 @@
 
     public class Loot
     {
+        private static Random rand = new Random();
         private List<Item> loot;
         public WearableItemType itemType;
         private int attackPoints = 10;
@@ -69,7 +70,7 @@
 
         public Item GetLoot()
         {
-            Random rand = new Random();
+          
             var shuffledLoot = loot.OrderBy(x => rand.Next())
                 .ToList();
 
@@ -78,7 +79,7 @@
 
         public List<IWearableItem> GetBasicEquipment()
         {
-            Random rand = new Random();
+          
             var items = this.loot.OrderBy(x => rand.Next())
                 .Where(item => item is IWearableItem)
                 .Cast<IWearableItem>()
