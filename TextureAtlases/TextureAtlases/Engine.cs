@@ -63,7 +63,7 @@ namespace TextureAtlases
             this.spriteFont = this.Content.Load<SpriteFont>("Sprites\\SpriteFont");
             this.monsterSprites = this.Content.Load<Texture2D>("Sprites\\monsterSprite");
             Texture2D[] sprites = {this.rightWalk, this.leftWalk, this.downWalk, this.upWalk};
-            this.hero = new Hero("1", new Position(300, 400), 4, sprites);
+            this.hero = new Hero("1", new Position(300, 400),4, sprites);
             
             List<IWearableItem> items = new Loot(2).GetBasicEquipment();
             this.hero.Equipment.AddSet(items);

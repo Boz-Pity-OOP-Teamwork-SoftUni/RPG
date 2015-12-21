@@ -27,7 +27,7 @@ namespace RolePlayingGame.Models
             this.SpriteAnimations = spriteAnimations;
         }
 
-        public Microsoft.Xna.Framework.Rectangle DestRectangle { get; set; }
+        public Rectangle DestRectangle { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
         public double Elapsed { get; set; }    
@@ -44,7 +44,7 @@ namespace RolePlayingGame.Models
             int width = this.CurrentAnim.Width / this.Columns;
             int height = this.CurrentAnim.Height / this.Rows;
             int row = this.CurrentFrame / this.Columns;
-            int column = this.CurrentAnim.Width % this.Columns;
+            int column = this.CurrentFrame % this.Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             //Rectangle sourceRectangle = new Rectangle(0, 0, 0, 0);

@@ -4,5 +4,5 @@ Content\Sprites\downWalk.xnb
 Content\Sprites\leftWalk.xnb
 Content\Sprites\upWalk.xnb
 Content\Sprites\greenSquare.xnb
-Content\Sprites\SpriteFont.xnb
 Content\Sprites\monsterSprite.xnb
+Content\Sprites\SpriteFont.xnb

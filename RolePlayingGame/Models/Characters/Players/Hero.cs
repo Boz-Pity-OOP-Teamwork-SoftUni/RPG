@@ -84,7 +84,7 @@
                 {
                     this.Visualizer.Position = new Position(this.Visualizer.Position.X+2,this.Visualizer.Position.Y);
                 }
-                this.currentAnim = this.Visualizer.SpriteAnimations[0];
+                this.Visualizer.CurrentAnim = this.Visualizer.SpriteAnimations[0];
                 this.Visualizer.Animate(gameTime);
             }
             else if (this.ks.IsKeyDown(Keys.Left) || this.ks.IsKeyDown(Keys.A))
@@ -93,16 +93,7 @@
                 {
                     this.Visualizer.Position = new Position(this.Visualizer.Position.X - 2, this.Visualizer.Position.Y);
                 }
-                this.currentAnim = this.Visualizer.SpriteAnimations[1];
-                this.Visualizer.Animate(gameTime);
-            }
-            else if (this.ks.IsKeyDown(Keys.Up) || this.ks.IsKeyDown(Keys.W))
-            {
-                if (this.Visualizer.Position.Y - 2f > 0)
-                {
-                    this.Visualizer.Position = new Position(this.Visualizer.Position.X, this.Visualizer.Position.Y-2);
-                }
-                this.currentAnim = this.Visualizer.SpriteAnimations[3];
+                this.Visualizer.CurrentAnim = this.Visualizer.SpriteAnimations[1];
                 this.Visualizer.Animate(gameTime);
             }
             else if (this.ks.IsKeyDown(Keys.Down) || this.ks.IsKeyDown(Keys.S))
@@ -111,7 +102,16 @@
                 {
                     this.Visualizer.Position = new Position(this.Visualizer.Position.X, this.Visualizer.Position.Y + 2);
                 }
-                this.currentAnim = this.Visualizer.SpriteAnimations[2];
+                this.Visualizer.CurrentAnim = this.Visualizer.SpriteAnimations[2];
+                this.Visualizer.Animate(gameTime);
+            }
+            else if (this.ks.IsKeyDown(Keys.Up) || this.ks.IsKeyDown(Keys.W))
+            {
+                if (this.Visualizer.Position.Y - 2f > 0)
+                {
+                    this.Visualizer.Position = new Position(this.Visualizer.Position.X, this.Visualizer.Position.Y-2);
+                }
+                this.Visualizer.CurrentAnim = this.Visualizer.SpriteAnimations[3];
                 this.Visualizer.Animate(gameTime);
             }
             else
