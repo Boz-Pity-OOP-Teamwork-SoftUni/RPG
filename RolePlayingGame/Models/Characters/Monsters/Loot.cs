@@ -6,7 +6,6 @@
     using RolePlayingGame.Enums;
     using RolePlayingGame.Interfaces;
     using RolePlayingGame.Models.Items;
-    using RandomNameGeneratorLibrary;
 
     public class Loot
     {
@@ -32,8 +31,7 @@
                 itemType = (WearableItemType)Enum.ToObject(typeof(WearableItemType), i);
                 
                 var id = (((i + 1) * level)).ToString();
-                var name = new PersonNameGenerator().GenerateRandomMaleFirstName() +
-                           new PlaceNameGenerator().GenerateRandomPlaceName();
+                var name = "Pesho" + i + " item";
 
                 Item wearableItem = null;
 

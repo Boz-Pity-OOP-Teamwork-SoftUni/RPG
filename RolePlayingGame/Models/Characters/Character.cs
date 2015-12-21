@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using RolePlayingGame.Interfaces;
     using Items;
+    using Microsoft.Xna.Framework;
     using RolePlayingGame.Models.Events;
 
     public abstract class Character : GameObject, IAttackable, IDefendable
@@ -44,6 +45,9 @@
             this.Inventory = new Inventory();
             this.Equipment = new Equipment();
             this.CharacterDiedEventArgs = new CharacterDiedEventArgs(name);
+
+            this.DestRectangle = new Rectangle(Position.X, Position.Y, 50, 50); //TODO give nonmagic value
+
         }
 
         public Position Position { get; set; }
@@ -54,6 +58,11 @@
             set { this.name = value; }                
         }
 
+        public Rectangle DestRectangle
+        {
+            get;
+            private set;
+        }
         public CharacterDiedEventArgs CharacterDiedEventArgs { get; set; }
 
         public int HealthPoints

@@ -9,17 +9,23 @@
     {
         private int experience;
         private Loot loot;
+        private const string defaultName = "MonsterGRRR";
+        private const int defaultHealthPoints = 500;
+        private const int defaultDefensePoints = 5;
+        private const int defaultAttackPoints = 10;
+        private const double defaultCritChance = 2.0;
+        private const double defaultCritMultiplier = 1.2;
+        private const double defaultDodgeChance = 10;
+        private const int defaultLevel = 1;
      
-        public Monster(string id, Position position, string name, int healthPoints, 
-            double defensePoints, double attackPoints, double critChance,
-            double critMultiplier, double dodgeChance, int level, int experience) 
-            : base(id, position, healthPoints, name, defensePoints, attackPoints, 
-                critChance, critMultiplier, dodgeChance,level)
+        public Monster(string id, Position position)
+            : base(id, position, defaultHealthPoints, defaultName, defaultDefensePoints, defaultAttackPoints,
+                defaultCritChance, defaultCritMultiplier, defaultDodgeChance, defaultLevel)
         {
             this.Experience = experience;
-            this.loot = new Loot(level);
+            this.loot = new Loot(defaultLevel);
             this.CharacterDiedEventArgs =
-                new CharacterDiedEventArgs(string.Format("{0} died", name), name, experience, loot.GetLoot());
+                new CharacterDiedEventArgs(string.Format("{0} died", defaultName), defaultName, experience, loot.GetLoot());
         }
 
         public int Experience

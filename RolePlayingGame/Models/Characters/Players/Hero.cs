@@ -10,14 +10,19 @@
         private const int XpBase = 100;
         private int? xpToNextLvl;
         public event LevelUpEventHandler levelUp;
-
-        public Hero(string id, Position position, string name, int healthPoints,
-            double defensePoints, double attackPoints, double critChance,
-            double critMultiplier, double dodgeChance, int level)
-            : base(id, position, healthPoints,name, defensePoints, attackPoints,
-                  critChance, critMultiplier, dodgeChance, level)
+        private const string defaultName = "Hero";
+        private const int defaultHealthPoints = 5000;
+        private const int defaultDefensePoints = 20;
+        private const int defaultAttackPoints = 40;
+        private const double defaultCritChance = 5.0;
+        private const double defaultCritMultiplier = 1.5;
+        private const double defaultDodgeChance = 20;
+        private const int defaultLevel = 1;
+        public Hero(string id, Position position)
+            : base(id, position, defaultHealthPoints, defaultName, defaultDefensePoints, defaultAttackPoints,
+                  defaultCritChance, defaultCritMultiplier, defaultDodgeChance, defaultLevel)
         {
-            this.XpToNextLevel = level * XpBase;
+            this.XpToNextLevel = this.Level * XpBase;
         }
 
         public int? XpToNextLevel

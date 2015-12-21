@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster1.xnb</Output>
-      <Time>2015-12-15T22:55:49.7818388+02:00</Time>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster1.xnb</Output>
+      <Time>2015-12-20T18:25:26.9480992+02:00</Time>
     </Item>
     <Item>
       <Source>Monsters\monster2.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster2.xnb</Output>
-      <Time>2015-12-15T22:55:49.7828388+02:00</Time>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster2.xnb</Output>
+      <Time>2015-12-20T18:25:26.9480992+02:00</Time>
     </Item>
     <Item>
       <Source>Monsters\monster3.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster3.xnb</Output>
-      <Time>2015-12-15T22:55:49.7848389+02:00</Time>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\bin\x86\Debug\Content\Monsters\monster3.xnb</Output>
+      <Time>2015-12-20T18:25:26.9480992+02:00</Time>
     </Item>
     <Item>
       <Source>Background\level1.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\Background\level1.xnb</Output>
-      <Time>2015-12-15T22:57:23.0911758+02:00</Time>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\bin\x86\Debug\Content\Background\level1.xnb</Output>
+      <Time>2015-12-20T18:25:26.9480992+02:00</Time>
     </Item>
     <Item>
       <Source>MapFont.spritefont</Source>
@@ -43,8 +43,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\MapFont.xnb</Output>
-      <Time>2015-12-15T23:03:41.1638003+02:00</Time>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\bin\x86\Debug\Content\MapFont.xnb</Output>
+      <Time>2015-12-20T18:25:26.9480992+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -53,10 +53,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -85,7 +85,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-12-08T20:02:14.7544922+02:00</Value>
+        <Value>2015-12-05T13:04:00.2530555+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

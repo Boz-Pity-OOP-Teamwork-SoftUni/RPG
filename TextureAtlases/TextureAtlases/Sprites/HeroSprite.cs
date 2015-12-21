@@ -1,17 +1,15 @@
 ﻿
 
-namespace TextureAtlas
+namespace TextureAtlases.Sprites
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
+    using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
+    using RolePlayingGame.Models.Characters;
+    using RolePlayingGame.Models.Characters.Players;
 
-    public class AnimatedSprite
+    public class HeroSprite: Hero
     {
         private int currentFrame;
         private readonly int totalFrames;
@@ -25,15 +23,15 @@ namespace TextureAtlas
 
 
 
-        public AnimatedSprite(ContentManager Content, GraphicsDeviceManager graphics, float x, float y, int rows, int columns, double delay)
+        public HeroSprite(Texture2D leftWalk, Texture2D rightWalk, Texture2D upWalk, Texture2D downWalk,GraphicsDeviceManager graphics, float x, float y, int rows, int columns, double delay, string id)
+            :base(id,new Position((int)x,(int)y))
+
         {
-            this.rightWalk = Content.Load<Texture2D>("Sprites\\rightWalk");
-            this.leftWalk = Content.Load<Texture2D>("Sprites\\leftWalk");
-            this.upWalk = Content.Load<Texture2D>("Sprites\\upWalk");
-            this.downWalk = Content.Load<Texture2D>("Sprites\\downWalk");
-            this.currentAnim = this.rightWalk;
-            this.position.X = x;
-            this.position.Y = y;
+            this.leftWalk = leftWalk;
+            this.rightWalk = rightWalk;
+            this.upWalk = upWalk;
+            this.downWalk = downWalk;
+            this.currentAnim = this.rightWalk;           
             this.Delay = delay;
             this.Rows = rows;
             this.Columns = columns;
@@ -42,13 +40,11 @@ namespace TextureAtlas
             this.screenHight = graphics.PreferredBackBufferHeight;
             this.screenWidth = graphics.PreferredBackBufferWidth;
 
-
+           // this.DestRectangle = new Rectangle((int)this.position.X, (int)this.position.Y, 50, 50); //TODO give nonmagic value
         }
 
-        public Vector2 Position { get; set; }
-
         public Texture2D Texture { get; set; }
-
+        public Rectangle DestRectangle { get; private set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
         public double Elapsed { get; set; }
@@ -59,7 +55,7 @@ namespace TextureAtlas
         public void Animate(GameTime gameTime)
         {
             this.elapsed += gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (elapsed >= this.Delay)
+            if (this.elapsed >= this.Delay)
             {
                 this.currentFrame++;
                 if (this.currentFrame == this.totalFrames)
@@ -72,9 +68,9 @@ namespace TextureAtlas
         }
         public void Update(GameTime gameTime)
         {
-            ks = Keyboard.GetState();
+            this.ks = Keyboard.GetState();
 
-            if (ks.IsKeyDown(Keys.Right) || ks.IsKeyDown(Keys.D))
+            if (this.ks.IsKeyDown(Keys.Right) || this.ks.IsKeyDown(Keys.D))
             {
                 if (this.position.X + 2f < this.screenWidth-this.rightWalk.Width/4)
                 {
@@ -83,7 +79,7 @@ namespace TextureAtlas
                 this.currentAnim = this.rightWalk;
                 Animate(gameTime);
             }
-            else if (ks.IsKeyDown(Keys.Left) || ks.IsKeyDown(Keys.A))
+            else if (this.ks.IsKeyDown(Keys.Left) || this.ks.IsKeyDown(Keys.A))
             {
                 if (this.position.X - 2f > 0)
                 {
@@ -92,7 +88,7 @@ namespace TextureAtlas
                 this.currentAnim = this.leftWalk;
                 Animate(gameTime);
             }
-            else if (ks.IsKeyDown(Keys.Up) || ks.IsKeyDown(Keys.W))
+            else if (this.ks.IsKeyDown(Keys.Up) || this.ks.IsKeyDown(Keys.W))
             {
                 if (this.position.Y - 2f > 0)
                 {
@@ -101,7 +97,7 @@ namespace TextureAtlas
                 this.currentAnim = this.upWalk;
                 Animate(gameTime);
             }
-            else if (ks.IsKeyDown(Keys.Down) || ks.IsKeyDown(Keys.S))
+            else if (this.ks.IsKeyDown(Keys.Down) || this.ks.IsKeyDown(Keys.S))
             {
                 if (this.position.Y + 2f < this.screenHight - this.rightWalk.Height)
                 {
@@ -114,21 +110,24 @@ namespace TextureAtlas
             {
                 this.currentFrame = 0;
             }
+
+           
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            int width = currentAnim.Width / this.Columns;
-            int height = currentAnim.Height / this.Rows;
+            int width = this.currentAnim.Width / this.Columns;
+            int height = this.currentAnim.Height / this.Rows;
             int row = (int)((float)this.currentFrame / (float)this.Columns);
             int column = this.currentFrame % this.Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, width, height);
+            this.DestRectangle = new Rectangle((int)this.position.X, (int)this.position.Y, width, height);
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(currentAnim, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            
+           // spriteBatch.Begin();
+            spriteBatch.Draw(this.currentAnim, this.DestRectangle, sourceRectangle, Color.White);
+           // spriteBatch.End();
         }
     }
 }

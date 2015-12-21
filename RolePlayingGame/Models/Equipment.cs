@@ -88,6 +88,7 @@
                     }
                     catch (EquipItemException e)
                     {
+                        
                     }
                     finally
                     {
