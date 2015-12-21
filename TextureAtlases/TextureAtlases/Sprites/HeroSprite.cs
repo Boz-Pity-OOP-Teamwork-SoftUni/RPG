@@ -9,7 +9,7 @@ namespace TextureAtlases.Sprites
     using RolePlayingGame.Models.Characters;
     using RolePlayingGame.Models.Characters.Players;
 
-    public class HeroSprite: Hero
+    public class HeroSprite
     {
         private int currentFrame;
         private readonly int totalFrames;
@@ -24,7 +24,7 @@ namespace TextureAtlases.Sprites
 
 
         public HeroSprite(Texture2D leftWalk, Texture2D rightWalk, Texture2D upWalk, Texture2D downWalk,GraphicsDeviceManager graphics, float x, float y, int rows, int columns, double delay, string id)
-            :base(id,new Position((int)x,(int)y))
+            
 
         {
             this.leftWalk = leftWalk;

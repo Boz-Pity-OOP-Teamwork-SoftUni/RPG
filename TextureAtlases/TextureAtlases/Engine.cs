@@ -27,11 +27,11 @@ namespace TextureAtlases
         readonly GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private SpriteFont spriteFont;
-        private HeroSprite heroSprite;
-        private Texture2D leftWalk, rightWalk, upWalk, downWalk;
+        private Hero hero;
+        private Texture2D leftWalk, rightWalk, upWalk, downWalk, monsterSprites;
         
         private FightInfo fightInfo;
-        private List<MonsterSprite> monsterSprites = new List<MonsterSprite>();
+        private List<Monster> monsters = new List<Monster>();
         private bool isCollided = false;
         private bool isFighting = false;
         private double elapsed = 0;
@@ -43,7 +43,7 @@ namespace TextureAtlases
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 800;
             Content.RootDirectory = "Content";
-
+           
 
         }
 
@@ -61,13 +61,13 @@ namespace TextureAtlases
             this.upWalk = Content.Load<Texture2D>("Sprites\\upWalk");
             this.downWalk = Content.Load<Texture2D>("Sprites\\downWalk");
             this.spriteFont = this.Content.Load<SpriteFont>("Sprites\\SpriteFont");
-
-            this.heroSprite = new HeroSprite(this.leftWalk,this.rightWalk,this.upWalk,this.downWalk, this.graphics, 300, 00, 1, 4, 150, "id");
+            this.monsterSprites = this.Content.Load<Texture2D>("Sprites\\monsterSprite");
+            Texture2D[] sprites = {this.rightWalk, this.leftWalk, this.downWalk, this.upWalk};
+            this.hero = new Hero("1", new Position(300, 400), 4, sprites);
             
             List<IWearableItem> items = new Loot(2).GetBasicEquipment();
-            this.heroSprite.Equipment.AddSet(items);
-            //this.monsterSprite.Add(); = new MonsterSprite(Content, this.graphics, 200, 400, 1, 1, 150);
-
+            this.hero.Equipment.AddSet(items);
+           
             this.fightInfo = new FightInfo();
             IniztializeMonsters();
             
@@ -85,10 +85,11 @@ namespace TextureAtlases
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            this.heroSprite.Update(gameTime);
-            if (this.monsterSprites.Any(x => this.heroSprite.DestRectangle.Intersects(x.DestRectangle) && x.IsAlive))
+            this.hero.Update(gameTime);
+            if (this.monsters.Any(x => this.hero.DestRectangle.Intersects(x.DestRectangle) && x.IsAlive))
             {
-                Duel(this.monsterSprites.FirstOrDefault(x => this.heroSprite.DestRectangle.Intersects(x.DestRectangle)
+                Duel(this.monsters
+                    .FirstOrDefault(x => this.hero.Visualizer.DestRectangle.Intersects(x.Visualizer.DestRectangle)
                     && x.IsAlive), gameTime);
                 this.isCollided = true;
             }
@@ -97,24 +98,18 @@ namespace TextureAtlases
         
         protected override void Draw(GameTime gameTime)
         {
-
-
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
             this.spriteBatch.Begin();
-
-
-            this.heroSprite.Draw(this.spriteBatch);
-            foreach (var monsterSprite in this.monsterSprites)
+            this.hero.Visualizer.Draw(this.spriteBatch);
+            foreach (var monster in this.monsters)
             {
-                if (monsterSprite.IsAlive)
+                if (monster.IsAlive)
                 {
-                    monsterSprite.Draw(this.spriteBatch);
-
+                    monster.Visualizer.Draw(this.spriteBatch);
                 }
             }
-
-
-            this.spriteBatch.DrawString(this.spriteFont, "Health Points: " + this.heroSprite.HealthPoints,
+            this.spriteBatch.DrawString(this.spriteFont, "Health Points: " + this.hero.HealthPoints,
                 new Vector2(400, 50), Color.Black);
 
             if (this.isCollided)
@@ -140,53 +135,49 @@ namespace TextureAtlases
             base.Draw(gameTime);
 
         }
-          private void IniztializeMonsters()
+        private void IniztializeMonsters()
         {
             for (int i = 1, level = 1; i < 8; i++)
             {
-                var monster = new MonsterSprite(this.Content, this.graphics, i, i * 70, 1, 1, 150);
+                Texture2D[] sprites = {monsterSprites};
+                Monster monster = new Monster("231",new Position(1,70*i),1,sprites);
                 List<IWearableItem> items = new Loot(level).GetBasicEquipment();
                 monster.Equipment.AddSet(items);
-                this.monsterSprites.Add(monster);
+                this.monsters.Add(monster);
                 if (i % 2 == 0)
                 {
                     level++;
                 }
             }
         }
-        private void Duel(MonsterSprite monster, GameTime gameTime)
+        private void Duel(Monster monster, GameTime gameTime)
         {
             this.elapsed += gameTime.ElapsedGameTime.TotalMilliseconds;
             if (this.elapsed >= this.fightDelay)
             {
 
-                this.heroSprite.levelUp +=
+                this.hero.levelUp +=
                     (sender, eventArgs) =>
                     {
-                        //Console.WriteLine(eventArgs.Message);
                     };
 
                 monster.characterDied += (sender, eventArgs) =>
                 {
-                    this.heroSprite.XpToNextLevel -= eventArgs.XP;
-                    this.heroSprite.Inventory.AddItem(eventArgs.Drop);
+                    this.hero.XpToNextLevel -= eventArgs.XP;
+                    this.hero.Inventory.AddItem(eventArgs.Drop);
                 };
 
-                if (this.heroSprite.IsAlive && monster.IsAlive)
+                if (this.hero.IsAlive && monster.IsAlive)
                 {
 
                     this.isFighting = true;
-                    monster.Attack(this.heroSprite);
+                    monster.Attack(this.hero);
 
-                    this.heroSprite.Attack(monster);
+                    this.hero.Attack(monster);
                     this.fightInfo.MonsterHealth = monster.HealthPoints;
                 }
 
-                if (!monster.IsAlive)
-                {
-
-
-                }
+             
                 this.elapsed = 0;
             }
         }

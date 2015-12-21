@@ -64,6 +64,15 @@
       <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\SpriteFont.xnb</Output>
       <Time>2015-12-21T15:19:42.9790449+02:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\monsterSprite.png</Source>
+      <Name>Sprites\monsterSprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\monsterSprite.xnb</Output>
+      <Time>2015-12-21T21:28:16+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{8D8ACC1F-C2A1-4234-8588-812610CF93B0}</ContentProjectGUID>

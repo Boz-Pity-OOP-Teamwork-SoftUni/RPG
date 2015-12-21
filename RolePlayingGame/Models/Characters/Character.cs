@@ -5,6 +5,8 @@
     using RolePlayingGame.Interfaces;
     using Items;
     using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Content;
+    using Microsoft.Xna.Framework.Graphics;
     using RolePlayingGame.Models.Events;
 
     public abstract class Character : GameObject, IAttackable, IDefendable
@@ -23,16 +25,28 @@
         private double fullCrit;
         private double fullDodge;
         public event CharacterDiedEventHandler characterDied;
+        private Position position;
+        private int defaultHealthPoints;
+        private string defaultName;
+        private int defaultDefensePoints;
+        private int defaultAttackPoints;
+        private double defaultCritChance;
+        private double defaultCritMultiplier;
+        private double defaultDodgeChance;
+        private int defaultLevel;
 
         protected Character(string id, Position position, int healthPoints,
             string name,
             double defensePoints, double attackPoints, double criticalChance,
             double criticalMultiplier,
             double dodgeChance,
-            int level)
+            int level,
+            int totalFrames,
+            Texture2D[] texture2Ds
+            )
                 : base(id)
         {
-            this.Position = position;
+
             this.Name = name;
             this.HealthPoints = healthPoints;
             this.DefensePoints = defensePoints;
@@ -45,12 +59,12 @@
             this.Inventory = new Inventory();
             this.Equipment = new Equipment();
             this.CharacterDiedEventArgs = new CharacterDiedEventArgs(name);
-
-            this.DestRectangle = new Rectangle(Position.X, Position.Y, 50, 50); //TODO give nonmagic value
-
+            this.DestRectangle = new Rectangle(position.X, position.Y, 50, 50); //TODO give nonmagic value
+            this.Visualizer = new Visualizer(position,totalFrames,texture2Ds);
         }
 
-        public Position Position { get; set; }
+    
+        public IVisualizer Visualizer { get; set; }
 
         public string Name
         {
@@ -167,25 +181,10 @@
 
         public Equipment Equipment { get; set; }
 
-        public abstract Character GetTarget(IEnumerable<Character> targetsList);
+       
 
-        public void AddToInventory(Item item)
-        {
-            this.Inventory.AddItem(item);
-        }
 
-        public void RemoveFromInventory(Item item)
-        {
-            this.Inventory.RemoveItem(item);
-        }
-
-        protected virtual void ApplyItemEffects(Item item)
-        {
-        }
-
-        protected virtual void RemoveItemEffects(Item item)
-        {
-        }
+    
 
         public void Attack(Character target)
         {

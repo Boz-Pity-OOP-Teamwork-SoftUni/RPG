@@ -24,3 +24,4 @@ D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtl
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\RolePlayingGame.exe
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\RolePlayingGame.pdb
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\spriteFont.xnb
+D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\monsterSprite.xnb

@@ -9,7 +9,7 @@ namespace TextureAtlases
     using RolePlayingGame.Models.Characters;
     using RolePlayingGame.Models.Characters.Monsters;
 
-    public class MonsterSprite:Monster
+    public class MonsterSprite
     {
         private int currentFrame;
         private readonly int totalFrames;
@@ -25,7 +25,7 @@ namespace TextureAtlases
 
 
         public MonsterSprite(ContentManager Content, GraphicsDeviceManager graphics, float x, float y, int rows, int columns, double delay)
-            : base("idstring",new Position((int)x,(int)y))
+            
         {
             this.standing = Content.Load<Texture2D>("Sprites\\greenSquare");
             this.currentAnim = this.standing;
@@ -43,7 +43,6 @@ namespace TextureAtlases
         }
 
 
-        public Vector2 Position { get; set; }
 
         public Texture2D Texture { get; set; }
         public Rectangle DestRectangle { get; private set; }
