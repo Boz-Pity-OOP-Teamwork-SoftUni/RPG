@@ -23,7 +23,7 @@
         private const double defaultDodgeChance = 20;
         private const int defaultLevel = 1;
         private const int ScreenWidth = 800;
-        private const int ScreenHight = 600;
+        private const int ScreenHeight = 500;
         private KeyboardState ks;
         private Texture2D currentAnim;
         public Hero(string id, Position position, int totalFrames, Texture2D[] spriteAnimations)
@@ -98,7 +98,7 @@
             }
             else if (this.ks.IsKeyDown(Keys.Down) || this.ks.IsKeyDown(Keys.S))
             {
-                if (this.Visualizer.Position.Y + 2f < ScreenHight - this.Visualizer.SpriteAnimations[0].Height)
+                if (this.Visualizer.Position.Y + 2f < ScreenHeight - this.Visualizer.SpriteAnimations[0].Height)
                 {
                     this.Visualizer.Position = new Position(this.Visualizer.Position.X, this.Visualizer.Position.Y + 2);
                 }

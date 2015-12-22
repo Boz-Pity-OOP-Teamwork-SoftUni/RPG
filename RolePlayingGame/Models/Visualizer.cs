@@ -17,7 +17,7 @@ namespace RolePlayingGame.Models
         {
             this.DestRectangle = new Rectangle(position.X,position.Y,50,50);
             this.Rows = 1;
-            this.Columns = 4;
+            this.Columns = totalFrames;
             this.Elapsed = 0;
             this.Delay = DelayDefault;
             this.CurrentAnim = spriteAnimations[0];
@@ -69,12 +69,5 @@ namespace RolePlayingGame.Models
                 this.Elapsed = 0;
             }
         }
-
-
-
-
-        
-
-     
     }
 }

@@ -1,2 +1,1 @@
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\XNATutorial\TextureAtlases\TextureAtlasesContent\obj\x86\Debug\TextureAtlasesContent.contentprojResolveAssemblyReference.cache
-D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlasesContent\obj\x86\Debug\TextureAtlasesContent.contentprojResolveAssemblyReference.cache

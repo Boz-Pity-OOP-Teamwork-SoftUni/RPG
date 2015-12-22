@@ -19,4 +19,3 @@ D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Lev
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\obj\x86\Debug\Level1.exe
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\obj\x86\Debug\Level1.pdb
-D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1\obj\x86\Debug\Level1.csprojResolveAssemblyReference.cache

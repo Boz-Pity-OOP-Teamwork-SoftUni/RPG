@@ -65,6 +65,33 @@
       <Time>2015-12-21T21:28:16+02:00</Time>
     </Item>
     <Item>
+      <Source>Sprites\map1.png</Source>
+      <Name>Sprites\map1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\map1.xnb</Output>
+      <Time>2015-12-22T01:37:36.5745762+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\map2.png</Source>
+      <Name>Sprites\map2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\map2.xnb</Output>
+      <Time>2015-12-21T17:40:52+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\map3.jpg</Source>
+      <Name>Sprites\map3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\map3.xnb</Output>
+      <Time>2015-12-21T17:41:38+02:00</Time>
+    </Item>
+    <Item>
       <Source>Sprites\SpriteFont.spritefont</Source>
       <Name>Sprites\SpriteFont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -72,6 +99,15 @@
       <Options>None</Options>
       <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\SpriteFont.xnb</Output>
       <Time>2015-12-21T15:19:42.9790449+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\gameOver.jpg</Source>
+      <Name>Sprites\gameOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\TextureAtlases\TextureAtlases\bin\x86\Debug\Content\Sprites\gameOver.xnb</Output>
+      <Time>2015-12-22T02:01:17.4168438+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

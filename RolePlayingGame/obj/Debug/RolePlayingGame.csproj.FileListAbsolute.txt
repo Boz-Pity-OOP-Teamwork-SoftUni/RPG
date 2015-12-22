@@ -17,4 +17,3 @@ D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayin
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayingGame\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayingGame\bin\Debug\Microsoft.Xna.Framework.Game.xml
 D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayingGame\bin\Debug\Microsoft.Xna.Framework.Graphics.xml
-D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\RolePlayingGame\obj\Debug\RolePlayingGame.csprojResolveAssemblyReference.cache

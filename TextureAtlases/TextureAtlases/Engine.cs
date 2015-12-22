@@ -29,7 +29,8 @@ namespace TextureAtlases
         private SpriteFont spriteFont;
         private Hero hero;
         private Texture2D leftWalk, rightWalk, upWalk, downWalk, monsterSprites;
-        
+        private Texture2D map1, map2, map3, gameOver;
+
         private FightInfo fightInfo;
         private List<Monster> monsters = new List<Monster>();
         private bool isCollided = false;
@@ -43,7 +44,7 @@ namespace TextureAtlases
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 800;
             Content.RootDirectory = "Content";
-           
+
 
         }
 
@@ -62,15 +63,17 @@ namespace TextureAtlases
             this.downWalk = Content.Load<Texture2D>("Sprites\\downWalk");
             this.spriteFont = this.Content.Load<SpriteFont>("Sprites\\SpriteFont");
             this.monsterSprites = this.Content.Load<Texture2D>("Sprites\\monsterSprite");
-            Texture2D[] sprites = {this.rightWalk, this.leftWalk, this.downWalk, this.upWalk};
-            this.hero = new Hero("1", new Position(300, 400),4, sprites);
-            
+            this.map1 = this.Content.Load<Texture2D>("Sprites\\map1");
+            this.gameOver = this.Content.Load<Texture2D>("Sprites\\gameOver");
+            Texture2D[] sprites = { this.rightWalk, this.leftWalk, this.downWalk, this.upWalk };
+            this.hero = new Hero("1", new Position(1,310), 4, sprites);
+
             List<IWearableItem> items = new Loot(2).GetBasicEquipment();
             this.hero.Equipment.AddSet(items);
-           
+
             this.fightInfo = new FightInfo();
             IniztializeMonsters();
-            
+
             this.IsMouseVisible = true;
         }
 
@@ -86,7 +89,7 @@ namespace TextureAtlases
                 this.Exit();
 
             this.hero.Update(gameTime);
-            if (this.monsters.Any(x => this.hero.DestRectangle.Intersects(x.DestRectangle) && x.IsAlive))
+            if (this.monsters.Any(x => this.hero.Visualizer.DestRectangle.Intersects(x.DestRectangle) && x.IsAlive))
             {
                 Duel(this.monsters
                     .FirstOrDefault(x => this.hero.Visualizer.DestRectangle.Intersects(x.Visualizer.DestRectangle)
@@ -95,13 +98,16 @@ namespace TextureAtlases
             }
             base.Update(gameTime);
         }
-        
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             this.spriteBatch.Begin();
+
+            this.spriteBatch.Draw(this.map1, Vector2.Zero, Color.White);
             this.hero.Visualizer.Draw(this.spriteBatch);
+
             foreach (var monster in this.monsters)
             {
                 if (monster.IsAlive)
@@ -109,20 +115,17 @@ namespace TextureAtlases
                     monster.Visualizer.Draw(this.spriteBatch);
                 }
             }
-            this.spriteBatch.DrawString(this.spriteFont, "Health Points: " + this.hero.HealthPoints,
-                new Vector2(400, 50), Color.Black);
 
+            this.spriteBatch.DrawString(this.spriteFont, "Hero HP: " + this.hero.HealthPoints, new Vector2(70, 555), Color.White);
+            this.spriteBatch.DrawString(this.spriteFont, "Hero EXP: " + this.hero.XpToNextLevel, new Vector2(70, 505), Color.White);
+           
             if (this.isCollided)
             {
                 if (this.isFighting)
                 {
-                    this.spriteBatch.DrawString(this.spriteFont, "Monster HP: " + this.fightInfo.MonsterHealth,
-                                new Vector2(400, 100), Color.Black);
-
-
+                    this.spriteBatch.DrawString(this.spriteFont, "Monster HP: " + this.fightInfo.MonsterHealth, new Vector2(475, 550), Color.White);
                 }
-                this.spriteBatch.DrawString(this.spriteFont, "Collision!!!", Vector2.One, Color.Black);
-
+                this.spriteBatch.DrawString(this.spriteFont, "Fight!!!", new Vector2(475, 515), Color.White);
             }
             else
             {
@@ -130,17 +133,21 @@ namespace TextureAtlases
             }
             this.isCollided = false;
 
+            if (!this.hero.IsAlive)
+            {
+                this.spriteBatch.Draw(this.gameOver, Vector2.Zero, Color.White);  
+            }
+
             this.spriteBatch.End();
-
             base.Draw(gameTime);
-
         }
         private void IniztializeMonsters()
         {
-            for (int i = 1, level = 1; i < 8; i++)
+            Random rand = new Random();
+            for (int i = 1, level = 1; i < 11; i++)
             {
-                Texture2D[] sprites = {monsterSprites};
-                Monster monster = new Monster("231",new Position(1,70*i),1,sprites);
+                Texture2D[] sprites = { monsterSprites };
+                Monster monster = new Monster("231", new Position(rand.Next(75*(i-1), 75*i), rand.Next(1, 480)), 1, sprites);
                 List<IWearableItem> items = new Loot(level).GetBasicEquipment();
                 monster.Equipment.AddSet(items);
                 this.monsters.Add(monster);
@@ -177,7 +184,7 @@ namespace TextureAtlases
                     this.fightInfo.MonsterHealth = monster.HealthPoints;
                 }
 
-             
+
                 this.elapsed = 0;
             }
         }

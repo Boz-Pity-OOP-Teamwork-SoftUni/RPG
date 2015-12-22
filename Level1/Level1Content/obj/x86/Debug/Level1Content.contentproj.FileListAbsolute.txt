@@ -1,2 +1,1 @@
 C:\Users\Ina\Documents\GitHub\RPG\Level1\Level1Content\obj\x86\Debug\Level1Content.contentprojResolveAssemblyReference.cache
-D:\Doc\Kamen\Soft_Uni\progFundamentals\OOP\teamworkProject\github\RPG\Level1\Level1Content\obj\x86\Debug\Level1Content.contentprojResolveAssemblyReference.cache
