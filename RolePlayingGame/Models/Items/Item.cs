@@ -27,6 +27,6 @@
 
                 this.name = value;
             }
-        }        
+        }
     }
 }

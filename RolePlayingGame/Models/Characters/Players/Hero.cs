@@ -26,6 +26,7 @@
         private const int ScreenHeight = 500;
         private KeyboardState ks;
         private Texture2D currentAnim;
+
         public Hero(string id, Position position, int totalFrames, Texture2D[] spriteAnimations)
             : base(id, position, defaultHealthPoints, defaultName, defaultDefensePoints, defaultAttackPoints,
                   defaultCritChance, defaultCritMultiplier, defaultDodgeChance, defaultLevel, totalFrames, spriteAnimations)
@@ -50,9 +51,6 @@
                 }
             }
         }
-
-
-
 
         protected virtual void OnLevelUp()
         {
@@ -82,8 +80,9 @@
             {
                 if (this.Visualizer.Position.X + 2f < ScreenWidth - this.Visualizer.SpriteAnimations[0].Width / 4)
                 {
-                    this.Visualizer.Position = new Position(this.Visualizer.Position.X+2,this.Visualizer.Position.Y);
+                    this.Visualizer.Position = new Position(this.Visualizer.Position.X + 2, this.Visualizer.Position.Y);
                 }
+
                 this.Visualizer.CurrentAnim = this.Visualizer.SpriteAnimations[0];
                 this.Visualizer.Animate(gameTime);
             }
@@ -93,6 +92,7 @@
                 {
                     this.Visualizer.Position = new Position(this.Visualizer.Position.X - 2, this.Visualizer.Position.Y);
                 }
+
                 this.Visualizer.CurrentAnim = this.Visualizer.SpriteAnimations[1];
                 this.Visualizer.Animate(gameTime);
             }
@@ -102,6 +102,7 @@
                 {
                     this.Visualizer.Position = new Position(this.Visualizer.Position.X, this.Visualizer.Position.Y + 2);
                 }
+
                 this.Visualizer.CurrentAnim = this.Visualizer.SpriteAnimations[2];
                 this.Visualizer.Animate(gameTime);
             }
@@ -109,8 +110,9 @@
             {
                 if (this.Visualizer.Position.Y - 2f > 0)
                 {
-                    this.Visualizer.Position = new Position(this.Visualizer.Position.X, this.Visualizer.Position.Y-2);
+                    this.Visualizer.Position = new Position(this.Visualizer.Position.X, this.Visualizer.Position.Y - 2);
                 }
+
                 this.Visualizer.CurrentAnim = this.Visualizer.SpriteAnimations[3];
                 this.Visualizer.Animate(gameTime);
             }
@@ -118,12 +120,6 @@
             {
                 this.Visualizer.CurrentFrame = 0;
             }
-
-
         }
-
-
-
-
     }
 }

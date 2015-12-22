@@ -5,9 +5,9 @@
     public class EquipItemException : Exception
     {
         public EquipItemException(string message)
-            :base(message)
+            : base(message)
         {
-            
+
         }
     }
 }

@@ -23,6 +23,6 @@
 
                 this.id = value;
             }
-        }       
+        }
     }
 }

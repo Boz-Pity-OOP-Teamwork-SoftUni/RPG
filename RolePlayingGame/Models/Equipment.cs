@@ -28,24 +28,24 @@
             }
             if (this.EquipedItems.ContainsKey(item.ItemType))
             {
-                SwapItems(item.ItemType,item);
+                SwapItems(item.ItemType, item);
             }
             else
             {
-                if ((item.ItemType == WearableItemType.OneHandWeapon
-                     || item.ItemType == WearableItemType.Shield)
-                    && !isEquipedWith2hWeapon())
+                if ((item.ItemType == WearableItemType.OneHandWeapon ||
+                    item.ItemType == WearableItemType.Shield) &&
+                    !isEquipedWith2hWeapon())
                 {
                     this.equipedItems.Add(item.ItemType, item);
                 }
-                else if (item.ItemType == WearableItemType.TwoHandWeapon
-                         && !isEquipedWithWeaponAndShield())
+                else if (item.ItemType == WearableItemType.TwoHandWeapon &&
+                    !isEquipedWithWeaponAndShield())
                 {
                     this.equipedItems.Add(item.ItemType, item);
                 }
-                else if(item.ItemType!=WearableItemType.OneHandWeapon 
-                    && item.ItemType!=WearableItemType.TwoHandWeapon
-                    && item.ItemType!=WearableItemType.Shield)
+                else if (item.ItemType != WearableItemType.OneHandWeapon &&
+                    item.ItemType != WearableItemType.TwoHandWeapon &&
+                    item.ItemType != WearableItemType.Shield)
                 {
                     this.equipedItems.Add(item.ItemType, item);
                 }
@@ -73,14 +73,12 @@
 
         public void AddSet(IList<IWearableItem> set)
         {
-            while (this.equipedItems.Count<=5
-                && (!this.equipedItems.ContainsKey(WearableItemType.TwoHandWeapon) 
-                  || (!this.equipedItems.ContainsKey(WearableItemType.OneHandWeapon)
-                        && !this.equipedItems.ContainsKey(WearableItemType.Shield))
-                  ))
-               
+            while (this.equipedItems.Count <= 5 &&
+                (!this.equipedItems.ContainsKey(WearableItemType.TwoHandWeapon) ||
+                (!this.equipedItems.ContainsKey(WearableItemType.OneHandWeapon) &&
+                !this.equipedItems.ContainsKey(WearableItemType.Shield))))
             {
-                for (int i = 0; i < set.Count; i++)                     
+                for (int i = 0; i < set.Count; i++)
                 {
                     try
                     {
@@ -88,14 +86,14 @@
                     }
                     catch (EquipItemException e)
                     {
-                        
+
                     }
                     finally
                     {
                         set.Remove(set[i]);
                     }
                 }
-            }            
+            }
         }
 
         private bool isEquipedWith2hWeapon()
@@ -110,8 +108,8 @@
 
         private bool isEquipedWithWeaponAndShield()
         {
-            if (this.equipedItems.ContainsKey(WearableItemType.OneHandWeapon)
-                || this.equipedItems.ContainsKey(WearableItemType.Shield))
+            if (this.equipedItems.ContainsKey(WearableItemType.OneHandWeapon) ||
+                this.equipedItems.ContainsKey(WearableItemType.Shield))
             {
                 return true;
             }

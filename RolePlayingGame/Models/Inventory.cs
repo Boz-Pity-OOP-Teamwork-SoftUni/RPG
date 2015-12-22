@@ -6,8 +6,10 @@
 
     public class Inventory
     {
-        private const int Default_Capacity=12;
+        private const int Default_Capacity = 12;
+
         private IList<Item> inventoryItems;
+
         private int capacity;
 
         public Inventory(int capacity = Default_Capacity)
@@ -18,7 +20,7 @@
 
         public IList<Item> InventoryItems
         {
-            get { return this.inventoryItems; }          
+            get { return this.inventoryItems; }
         }
 
         public int Capacity

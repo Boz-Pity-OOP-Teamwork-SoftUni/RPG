@@ -7,7 +7,8 @@
     {
         private int healthUpdate;
 
-        public HealthPotion(string id, string name, int healthUpdate) : base(id, name)
+        public HealthPotion(string id, string name, int healthUpdate)
+            : base(id, name)
         {
             this.HealthUpdate = healthUpdate;
         }

@@ -13,14 +13,14 @@
         private double dodgeChance;
 
         public WearableItem(string id, string name, WearableItemType itemType,
-            int attackPoints, int defencePoints, double critChance, double dodgeChance) 
+            int attackPoints, int defencePoints, double critChance, double dodgeChance)
             : base(id, name)
         {
             this.ItemType = itemType;
             this.AttackPoints = attackPoints;
             this.DefencePoints = defencePoints;
             this.CritChance = critChance;
-            this.DodgeChance = dodgeChance;            
+            this.DodgeChance = dodgeChance;
         }
 
         public WearableItemType ItemType
@@ -75,7 +75,7 @@
 
                 this.critChance = value;
             }
-        }  
+        }
 
         public double DodgeChance
         {

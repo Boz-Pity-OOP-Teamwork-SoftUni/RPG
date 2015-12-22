@@ -10,8 +10,7 @@
     using RolePlayingGame.Models.Events;
 
     public abstract class Character : GameObject, IAttackable, IDefendable
-
-    {       
+    {
         private string name;
         private int healthPoints;
         private double defensePoints;
@@ -42,8 +41,7 @@
             double dodgeChance,
             int level,
             int totalFrames,
-            Texture2D[] texture2Ds
-            )
+            Texture2D[] texture2Ds)
                 : base(id)
         {
 
@@ -60,23 +58,19 @@
             this.Equipment = new Equipment();
             this.CharacterDiedEventArgs = new CharacterDiedEventArgs(name);
             this.DestRectangle = new Rectangle(position.X, position.Y, 50, 50); //TODO give nonmagic value
-            this.Visualizer = new Visualizer(position,totalFrames,texture2Ds);
+            this.Visualizer = new Visualizer(position, totalFrames, texture2Ds);
         }
 
-    
         public IVisualizer Visualizer { get; set; }
 
         public string Name
         {
             get { return this.name; }
-            set { this.name = value; }                
+            set { this.name = value; }
         }
 
-        public Rectangle DestRectangle
-        {
-            get;
-            private set;
-        }
+        public Rectangle DestRectangle { get; private set; }
+
         public CharacterDiedEventArgs CharacterDiedEventArgs { get; set; }
 
         public int HealthPoints
@@ -180,12 +174,8 @@
         public Inventory Inventory { get; private set; }
 
         public Equipment Equipment { get; set; }
-
-       
-
-
-    
-
+        
+        // Attack
         public void Attack(Character target)
         {
             if (this.IsAlive == false)
@@ -206,6 +196,7 @@
             target.Defend(this.fullAttack);
         }
 
+        // Deffend
         public void Defend(double damage)
         {
             CalculateStats();
@@ -236,12 +227,12 @@
         }
 
         protected virtual void OnCharacterDied()
-        {           
+        {
             if (this.characterDied != null)
             {
                 this.IsAlive = false;
                 this.HealthPoints = 0;
-                this.characterDied(this, this.CharacterDiedEventArgs);               
+                this.characterDied(this, this.CharacterDiedEventArgs);
             }
         }
 

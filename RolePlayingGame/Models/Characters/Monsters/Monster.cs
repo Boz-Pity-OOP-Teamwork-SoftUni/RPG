@@ -34,8 +34,6 @@
         {
             get { return this.experience; }
             set { this.experience = value; }
-        }       
-        
-           
+        }
     }
 }

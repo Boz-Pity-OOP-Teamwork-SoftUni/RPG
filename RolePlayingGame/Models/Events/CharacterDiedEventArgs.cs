@@ -17,7 +17,7 @@
         public CharacterDiedEventArgs(string characterName)
             : this(characterName, null, null, null)
         {
-            this.CharacterName = characterName;            
+            this.CharacterName = characterName;
         }
 
         public string CharacterName { get; set; }
