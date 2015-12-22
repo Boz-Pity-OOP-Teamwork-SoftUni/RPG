@@ -10,8 +10,7 @@
     using RolePlayingGame.Models.Events;
 
     public abstract class Character : GameObject, IAttackable, IDefendable
-
-    {       
+    {
         private string name;
         private int healthPoints;
         private double defensePoints;
@@ -19,21 +18,12 @@
         private double criticalChance;
         private double criticalMultiplier;
         private double dodgeChange;
-        private int level;
         private double fullAttack;
         private double fullDefence;
         private double fullCrit;
         private double fullDodge;
-        public event CharacterDiedEventHandler characterDied;
-        private Position position;
-        private int defaultHealthPoints;
-        private string defaultName;
-        private int defaultDefensePoints;
-        private int defaultAttackPoints;
-        private double defaultCritChance;
-        private double defaultCritMultiplier;
-        private double defaultDodgeChance;
-        private int defaultLevel;
+        public event CharacterDiedEventHandler CharacterDied;
+        
 
         protected Character(string id, Position position, int healthPoints,
             string name,
@@ -44,7 +34,7 @@
             int totalFrames,
             Texture2D[] texture2Ds
             )
-                : base(id)
+            : base(id)
         {
 
             this.Name = name;
@@ -60,16 +50,26 @@
             this.Equipment = new Equipment();
             this.CharacterDiedEventArgs = new CharacterDiedEventArgs(name);
             this.DestRectangle = new Rectangle(position.X, position.Y, 50, 50); //TODO give nonmagic value
-            this.Visualizer = new Visualizer(position,totalFrames,texture2Ds);
+            this.Visualizer = new Visualizer(position, totalFrames, texture2Ds);
         }
 
-    
-        public IVisualizer Visualizer { get; set; }
+
+        public IVisualizer Visualizer
+        {
+            get;
+            set;
+        }
 
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }                
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
         }
 
         public Rectangle DestRectangle
@@ -77,26 +77,40 @@
             get;
             private set;
         }
-        public CharacterDiedEventArgs CharacterDiedEventArgs { get; set; }
+        public CharacterDiedEventArgs CharacterDiedEventArgs
+        {
+            get;
+            set;
+        }
 
         public int HealthPoints
         {
-            get { return this.healthPoints; }
+            get
+            {
+                return this.healthPoints;
+            }
             set
             {
                 // Game end
                 if (value <= 0)
                 {
                     this.IsAlive = false;
+                    this.healthPoints = 0;
+                }
+                else
+                {
+                    this.healthPoints = value;
                 }
 
-                this.healthPoints = value;
             }
         }
 
         public double DefensePoints
         {
-            get { return this.defensePoints; }
+            get
+            {
+                return this.defensePoints;
+            }
             set
             {
                 // TODO: Validation
@@ -111,7 +125,10 @@
 
         public double AttackPoints
         {
-            get { return this.attackPoints; }
+            get
+            {
+                return this.attackPoints;
+            }
             set
             {
                 // TODO: Validation
@@ -126,7 +143,10 @@
 
         public double CriticalChance
         {
-            get { return this.criticalChance; }
+            get
+            {
+                return this.criticalChance;
+            }
             set
             {
                 // TODO: Validation
@@ -141,7 +161,10 @@
 
         public double CriticalMultiplier
         {
-            get { return this.criticalMultiplier; }
+            get
+            {
+                return this.criticalMultiplier;
+            }
             set
             {
                 // TODO: Validation
@@ -156,7 +179,10 @@
 
         public double DodgeChance
         {
-            get { return this.dodgeChange; }
+            get
+            {
+                return this.dodgeChange;
+            }
             set
             {
                 // TODO: Validation
@@ -171,20 +197,32 @@
 
         public int Level
         {
-            get { return this.level; }
-            set { this.level = value; }
+            get;
+            set;
         }
 
-        public bool IsAlive { get; set; }
+        public bool IsAlive
+        {
+            get;
+            set;
+        }
 
-        public Inventory Inventory { get; private set; }
+        public Inventory Inventory
+        {
+            get;
+            private set;
+        }
 
-        public Equipment Equipment { get; set; }
+        public Equipment Equipment
+        {
+            get;
+            set;
+        }
 
-       
 
 
-    
+
+
 
         public void Attack(Character target)
         {
@@ -236,12 +274,12 @@
         }
 
         protected virtual void OnCharacterDied()
-        {           
-            if (this.characterDied != null)
+        {
+            if (this.CharacterDied != null)
             {
                 this.IsAlive = false;
                 this.HealthPoints = 0;
-                this.characterDied(this, this.CharacterDiedEventArgs);               
+                this.CharacterDied(this, this.CharacterDiedEventArgs);
             }
         }
 

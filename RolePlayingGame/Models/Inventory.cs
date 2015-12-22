@@ -43,6 +43,7 @@
             }
 
             this.inventoryItems.Add(item);
+            
         }
 
         public void RemoveItem(Item item)

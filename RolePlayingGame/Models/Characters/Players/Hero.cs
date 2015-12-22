@@ -2,7 +2,10 @@
 {
     using System.Collections.Generic;
     using System;
+    using System.Linq;
+    using System.Runtime.CompilerServices;
     using System.Runtime.Remoting.Messaging;
+    using Interfaces;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
@@ -11,24 +14,24 @@
 
     public class Hero : Character, IUpdateable
     {
-        private const int XpBase = 100;
+        private const int XpBase = 200;
         private int? xpToNextLvl;
         public event LevelUpEventHandler levelUp;
-        private const string defaultName = "Hero";
-        private const int defaultHealthPoints = 5000;
-        private const int defaultDefensePoints = 20;
-        private const int defaultAttackPoints = 40;
-        private const double defaultCritChance = 5.0;
-        private const double defaultCritMultiplier = 1.5;
-        private const double defaultDodgeChance = 20;
-        private const int defaultLevel = 1;
+        private const string DefaultName = "Hero";
+        private const int DefaultHealthPoints = 5000;
+        private const int DefaultDefensePoints = 20;
+        private const int DefaultAttackPoints = 40;
+        private const double DefaultCritChance = 5.0;
+        private const double DefaultCritMultiplier = 1.5;
+        private const double DefaultDodgeChance = 20;
+        private const int DefaultLevel = 1;
         private const int ScreenWidth = 800;
         private const int ScreenHeight = 500;
         private KeyboardState ks;
         private Texture2D currentAnim;
         public Hero(string id, Position position, int totalFrames, Texture2D[] spriteAnimations)
-            : base(id, position, defaultHealthPoints, defaultName, defaultDefensePoints, defaultAttackPoints,
-                  defaultCritChance, defaultCritMultiplier, defaultDodgeChance, defaultLevel, totalFrames, spriteAnimations)
+            : base(id, position, DefaultHealthPoints, DefaultName, DefaultDefensePoints, DefaultAttackPoints,
+                  DefaultCritChance, DefaultCritMultiplier, DefaultDodgeChance, DefaultLevel, totalFrames, spriteAnimations)
         {
             this.XpToNextLevel = this.Level * XpBase;
             this.currentAnim = spriteAnimations[0];
@@ -76,6 +79,12 @@
 
         public void Update(GameTime gameTime)
         {
+            if (!IsAlive)
+            {
+                return;
+            }
+       
+            
             this.ks = Keyboard.GetState();
 
             if (this.ks.IsKeyDown(Keys.Right) || this.ks.IsKeyDown(Keys.D))
@@ -122,8 +131,7 @@
 
         }
 
-
-
+      
 
     }
 }
