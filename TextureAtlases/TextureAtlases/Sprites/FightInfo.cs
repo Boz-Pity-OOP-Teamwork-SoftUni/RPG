@@ -1,10 +1,9 @@
 ﻿namespace TextureAtlases.Sprites
 {
-    public class FightInfo 
+    public class FightInfo
     {
         public FightInfo(int monsterHealth)
         {
-           
             this.MonsterHealth = monsterHealth;
         }
 
@@ -18,7 +17,5 @@
             get;
             set;
         }
-       
-
     }
 }

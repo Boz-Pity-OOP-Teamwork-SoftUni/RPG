@@ -1,17 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using RolePlayingGame.Models.Characters.Players;
-
 namespace TextureAtlases
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Audio;
+    using Microsoft.Xna.Framework.Content;
+    using Microsoft.Xna.Framework.GamerServices;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using Microsoft.Xna.Framework.Media;
+    using RolePlayingGame.Models.Characters.Players;
     using System.Globalization;
     using System.Reflection.Emit;
     using System.Threading;
@@ -37,6 +36,7 @@ namespace TextureAtlases
         private bool isFighting = false;
         private double elapsed = 0;
         private double fightDelay = 500;
+
         public Engine()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -44,8 +44,6 @@ namespace TextureAtlases
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 800;
             Content.RootDirectory = "Content";
-
-
         }
 
         protected override void Initialize()
@@ -66,7 +64,7 @@ namespace TextureAtlases
             this.map1 = this.Content.Load<Texture2D>("Sprites\\map1");
             this.gameOver = this.Content.Load<Texture2D>("Sprites\\gameOver");
             Texture2D[] sprites = { this.rightWalk, this.leftWalk, this.downWalk, this.upWalk };
-            this.hero = new Hero("1", new Position(1,310), 4, sprites);
+            this.hero = new Hero("1", new Position(1, 310), 4, sprites);
 
             List<IWearableItem> items = new Loot(2).GetBasicEquipment();
             this.hero.Equipment.AddSet(items);
@@ -81,21 +79,26 @@ namespace TextureAtlases
         {
 
         }
+
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            {
                 this.Exit();
+            }
 
             this.hero.Update(gameTime);
+            
             if (this.monsters.Any(x => this.hero.Visualizer.DestRectangle.Intersects(x.DestRectangle) && x.IsAlive))
             {
                 Duel(this.monsters
                     .FirstOrDefault(x => this.hero.Visualizer.DestRectangle.Intersects(x.Visualizer.DestRectangle)
                     && x.IsAlive), gameTime);
+
                 this.isCollided = true;
             }
+
             base.Update(gameTime);
         }
 
@@ -118,24 +121,26 @@ namespace TextureAtlases
 
             this.spriteBatch.DrawString(this.spriteFont, "Hero HP: " + this.hero.HealthPoints, new Vector2(70, 555), Color.White);
             this.spriteBatch.DrawString(this.spriteFont, "Hero EXP: " + this.hero.XpToNextLevel, new Vector2(70, 505), Color.White);
-           
+
             if (this.isCollided)
             {
                 if (this.isFighting)
                 {
                     this.spriteBatch.DrawString(this.spriteFont, "Monster HP: " + this.fightInfo.MonsterHealth, new Vector2(475, 550), Color.White);
                 }
+
                 this.spriteBatch.DrawString(this.spriteFont, "Fight!!!", new Vector2(475, 515), Color.White);
             }
             else
             {
                 this.isFighting = false;
             }
+
             this.isCollided = false;
 
             if (!this.hero.IsAlive)
             {
-                this.spriteBatch.Draw(this.gameOver, Vector2.Zero, Color.White);  
+                this.spriteBatch.Draw(this.gameOver, Vector2.Zero, Color.White);
             }
 
             this.spriteBatch.End();
@@ -144,25 +149,30 @@ namespace TextureAtlases
         private void IniztializeMonsters()
         {
             Random rand = new Random();
+
             for (int i = 1, level = 1; i < 11; i++)
             {
                 Texture2D[] sprites = { monsterSprites };
-                Monster monster = new Monster("231", new Position(rand.Next(75*(i-1), 75*i), rand.Next(1, 480)), 1, sprites);
+                Monster monster = new Monster("231", new Position(rand.Next(75 * (i - 1), 75 * i), rand.Next(1, 480)), 1, sprites);
+                
                 List<IWearableItem> items = new Loot(level).GetBasicEquipment();
                 monster.Equipment.AddSet(items);
+                
                 this.monsters.Add(monster);
+
                 if (i % 2 == 0)
                 {
                     level++;
                 }
             }
         }
+
         private void Duel(Monster monster, GameTime gameTime)
         {
             this.elapsed += gameTime.ElapsedGameTime.TotalMilliseconds;
+        
             if (this.elapsed >= this.fightDelay)
             {
-
                 this.hero.levelUp +=
                     (sender, eventArgs) =>
                     {
@@ -184,11 +194,8 @@ namespace TextureAtlases
                     this.fightInfo.MonsterHealth = monster.HealthPoints;
                 }
 
-
                 this.elapsed = 0;
             }
         }
-
-
     }
 }

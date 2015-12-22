@@ -1,6 +1,4 @@
-﻿
-
-namespace TextureAtlases
+﻿namespace TextureAtlases
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
@@ -20,12 +18,8 @@ namespace TextureAtlases
         private Vector2 position;
         private readonly int screenHight;
         private readonly int screenWidth;
-        
-
-
 
         public MonsterSprite(ContentManager Content, GraphicsDeviceManager graphics, float x, float y, int rows, int columns, double delay)
-            
         {
             this.standing = Content.Load<Texture2D>("Sprites\\greenSquare");
             this.currentAnim = this.standing;
@@ -39,27 +33,28 @@ namespace TextureAtlases
             this.screenHight = graphics.PreferredBackBufferHeight;
             this.screenWidth = graphics.PreferredBackBufferWidth;
             this.DestRectangle = new Rectangle((int)this.position.X, (int)this.position.Y, 50, 50); //TODO give nonmagic values
-
         }
 
-
-
         public Texture2D Texture { get; set; }
+
         public Rectangle DestRectangle { get; private set; }
 
         public int Rows { get; set; }
+
         public int Columns { get; set; }
+
         public double Elapsed { get; set; }
+
         public double Delay { get; set; }
-
-
 
         public void Animate(GameTime gameTime)
         {
             this.elapsed += gameTime.ElapsedGameTime.TotalMilliseconds;
+
             if (this.elapsed >= this.Delay)
             {
                 this.currentFrame++;
+
                 if (this.currentFrame == this.totalFrames)
                 {
                     this.currentFrame = 0;
@@ -68,7 +63,7 @@ namespace TextureAtlases
                 this.elapsed = 0;
             }
         }
-       
+
         public void Draw(SpriteBatch spriteBatch)
         {
             int width = this.currentAnim.Width / this.Columns;
@@ -78,11 +73,10 @@ namespace TextureAtlases
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)this.position.X, (int)this.position.Y, width, height);
-
             
-           // spriteBatch.Begin();
+            // spriteBatch.Begin();
             spriteBatch.Draw(this.currentAnim, destinationRectangle, sourceRectangle, Color.White);
-           // spriteBatch.End();
+            // spriteBatch.End();
         }
     }
 }

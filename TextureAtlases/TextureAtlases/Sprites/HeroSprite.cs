@@ -1,6 +1,4 @@
-﻿
-
-namespace TextureAtlases.Sprites
+﻿namespace TextureAtlases.Sprites
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
@@ -21,17 +19,13 @@ namespace TextureAtlases.Sprites
         private readonly int screenHight;
         private readonly int screenWidth;
 
-
-
-        public HeroSprite(Texture2D leftWalk, Texture2D rightWalk, Texture2D upWalk, Texture2D downWalk,GraphicsDeviceManager graphics, float x, float y, int rows, int columns, double delay, string id)
-            
-
+        public HeroSprite(Texture2D leftWalk, Texture2D rightWalk, Texture2D upWalk, Texture2D downWalk, GraphicsDeviceManager graphics, float x, float y, int rows, int columns, double delay, string id)
         {
             this.leftWalk = leftWalk;
             this.rightWalk = rightWalk;
             this.upWalk = upWalk;
             this.downWalk = downWalk;
-            this.currentAnim = this.rightWalk;           
+            this.currentAnim = this.rightWalk;
             this.Delay = delay;
             this.Rows = rows;
             this.Columns = columns;
@@ -40,24 +34,29 @@ namespace TextureAtlases.Sprites
             this.screenHight = graphics.PreferredBackBufferHeight;
             this.screenWidth = graphics.PreferredBackBufferWidth;
 
-           // this.DestRectangle = new Rectangle((int)this.position.X, (int)this.position.Y, 50, 50); //TODO give nonmagic value
+            // this.DestRectangle = new Rectangle((int)this.position.X, (int)this.position.Y, 50, 50); //TODO give nonmagic value
         }
 
         public Texture2D Texture { get; set; }
+
         public Rectangle DestRectangle { get; private set; }
+
         public int Rows { get; set; }
+
         public int Columns { get; set; }
+
         public double Elapsed { get; set; }
+
         public double Delay { get; set; }
-
-
 
         public void Animate(GameTime gameTime)
         {
             this.elapsed += gameTime.ElapsedGameTime.TotalMilliseconds;
+
             if (this.elapsed >= this.Delay)
             {
                 this.currentFrame++;
+
                 if (this.currentFrame == this.totalFrames)
                 {
                     this.currentFrame = 0;
@@ -66,25 +65,29 @@ namespace TextureAtlases.Sprites
                 this.elapsed = 0;
             }
         }
+
         public void Update(GameTime gameTime)
         {
             this.ks = Keyboard.GetState();
 
             if (this.ks.IsKeyDown(Keys.Right) || this.ks.IsKeyDown(Keys.D))
             {
-                if (this.position.X + 2f < this.screenWidth-this.rightWalk.Width/4)
+                if (this.position.X + 2f < this.screenWidth - this.rightWalk.Width / 4)
                 {
                     this.position.X += 2f;
                 }
+
                 this.currentAnim = this.rightWalk;
                 Animate(gameTime);
             }
+
             else if (this.ks.IsKeyDown(Keys.Left) || this.ks.IsKeyDown(Keys.A))
             {
                 if (this.position.X - 2f > 0)
                 {
                     this.position.X -= 2f;
                 }
+
                 this.currentAnim = this.leftWalk;
                 Animate(gameTime);
             }
@@ -94,6 +97,7 @@ namespace TextureAtlases.Sprites
                 {
                     this.position.Y -= 2f;
                 }
+
                 this.currentAnim = this.upWalk;
                 Animate(gameTime);
             }
@@ -103,6 +107,7 @@ namespace TextureAtlases.Sprites
                 {
                     this.position.Y += 2f;
                 }
+
                 this.currentAnim = this.downWalk;
                 Animate(gameTime);
             }
@@ -110,8 +115,6 @@ namespace TextureAtlases.Sprites
             {
                 this.currentFrame = 0;
             }
-
-           
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -123,11 +126,10 @@ namespace TextureAtlases.Sprites
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             this.DestRectangle = new Rectangle((int)this.position.X, (int)this.position.Y, width, height);
-
             
-           // spriteBatch.Begin();
+            // spriteBatch.Begin();
             spriteBatch.Draw(this.currentAnim, this.DestRectangle, sourceRectangle, Color.White);
-           // spriteBatch.End();
+            // spriteBatch.End();
         }
     }
 }
