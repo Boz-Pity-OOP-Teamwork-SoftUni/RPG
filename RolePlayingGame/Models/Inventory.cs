@@ -6,11 +6,11 @@
 
     public class Inventory
     {
-        private const int Default_Capacity=12;
-        private IList<Item> inventoryItems;
+        private const int DefaultCapacity=12;
+        private readonly IList<Item> inventoryItems;
         private int capacity;
 
-        public Inventory(int capacity = Default_Capacity)
+        public Inventory(int capacity = DefaultCapacity)
         {
             this.inventoryItems = new List<Item>();
             this.capacity = capacity;

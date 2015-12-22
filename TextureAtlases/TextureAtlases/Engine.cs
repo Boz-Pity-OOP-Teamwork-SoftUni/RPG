@@ -2,24 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using RolePlayingGame.Models.Characters.Players;
 
 namespace TextureAtlases
 {
-    using System.Globalization;
-    using System.Reflection.Emit;
-    using System.Threading;
     using RolePlayingGame.Interfaces;
     using RolePlayingGame.Models.Characters;
     using RolePlayingGame.Models.Characters.Monsters;
     using RolePlayingGame.Models.Items;
-    using System.Threading.Tasks;
     using Sprites;
 
     public class Engine : Microsoft.Xna.Framework.Game

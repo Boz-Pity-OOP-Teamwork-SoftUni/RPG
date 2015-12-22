@@ -1,11 +1,8 @@
 ﻿namespace RolePlayingGame.Models.Characters
 {
     using System;
-    using System.Collections.Generic;
     using RolePlayingGame.Interfaces;
-    using Items;
     using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
     using RolePlayingGame.Models.Events;
 

@@ -1,10 +1,6 @@
 ﻿namespace RolePlayingGame.Models.Characters.Monsters
 {
-    using System;
     using RolePlayingGame.Models.Events;
-    using System.Collections.Generic;
-    using Interfaces;
-    using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
 
     public class Monster : Character

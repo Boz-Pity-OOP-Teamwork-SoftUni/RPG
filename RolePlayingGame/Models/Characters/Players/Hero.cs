@@ -1,11 +1,6 @@
 ﻿namespace RolePlayingGame.Models.Characters.Players
 {
-    using System.Collections.Generic;
     using System;
-    using System.Linq;
-    using System.Runtime.CompilerServices;
-    using System.Runtime.Remoting.Messaging;
-    using Interfaces;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;

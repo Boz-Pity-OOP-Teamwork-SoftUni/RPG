@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace RolePlayingGame.Models
+﻿namespace RolePlayingGame.Models
 {
     using Characters;
     using Interfaces;
@@ -47,11 +42,8 @@ namespace RolePlayingGame.Models
             int column = this.CurrentFrame % this.Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            //Rectangle sourceRectangle = new Rectangle(0, 0, 0, 0);
             this.DestRectangle = new Rectangle(this.Position.X,this.Position.Y, width, height);
-            
 
-           // spriteBatch.Draw(this.CurrentAnim,,Color.White);
             spriteBatch.Draw(this.CurrentAnim,this.DestRectangle,sourceRectangle,Color.White);
         }
 

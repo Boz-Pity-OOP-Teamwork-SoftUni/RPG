@@ -1,5 +1,3 @@
-using System;
-
 namespace TextureAtlases
 {
 #if WINDOWS || XBOX
